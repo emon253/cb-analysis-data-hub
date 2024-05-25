@@ -151,3 +151,67 @@
 [2024-05-25 21:46:40] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
 [2024-05-25 21:46:40] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 0.988 seconds (process running for 930.825)
 [2024-05-25 21:46:40] [INFO] ConditionEvaluationDeltaLoggingListener.onApplicationEvent:63 - Condition evaluation unchanged
+[2024-05-25 22:08:58] [INFO] LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent:211 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2024-05-25 22:08:59] [INFO] Http11NioProtocol.log:173 - Stopping ProtocolHandler ["http-nio-8081"]
+[2024-05-25 22:08:59] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-25 22:08:59] [INFO] HikariDataSource.close:350 - HikariPool-4 - Shutdown initiated...
+[2024-05-25 22:08:59] [INFO] HikariDataSource.close:352 - HikariPool-4 - Shutdown completed.
+[2024-05-25 22:08:59] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 25688 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-05-25 22:08:59] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-05-25 22:09:00] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-05-25 22:09:00] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+[2024-05-25 22:09:00] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-05-25 22:09:00] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-05-25 22:09:00] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-05-25 22:09:00] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-05-25 22:09:00] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-05-25 22:09:00] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 467 ms
+[2024-05-25 22:09:00] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-05-25 22:09:00] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-05-25 22:09:00] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-05-25 22:09:00] [INFO] HikariDataSource.getConnection:110 - HikariPool-5 - Starting...
+[2024-05-25 22:09:00] [INFO] HikariPool.checkFailFast:565 - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ee460d8
+[2024-05-25 22:09:00] [INFO] HikariDataSource.getConnection:123 - HikariPool-5 - Start completed.
+[2024-05-25 22:09:00] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-05-25 22:09:00] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-25 22:09:00] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-05-25 22:09:00] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-05-25 22:09:00] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-05-25 22:09:00] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-05-25 22:09:00] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-05-25 22:09:00] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 1.235 seconds (process running for 2271.323)
+[2024-05-25 22:09:00] [INFO] ConditionEvaluationDeltaLoggingListener.onApplicationEvent:58 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   LogFileWebEndpointAutoConfiguration#logFileWebEndpoint matched:
+      - Log File found logging.file.name C:/ProgramData/Jenkins/.jenkins/workspace/scrapify/logs/app.log (LogFileWebEndpointAutoConfiguration.LogFileCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.logging.LogFileWebEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
