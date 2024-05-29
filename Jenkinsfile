@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the project with Maven, using the production profile
-                bat 'mvn clean package -Pprod'
+                bat 'mvn clean'
             }
         }
         stage('Deploy') {
@@ -24,7 +24,7 @@ pipeline {
                 script {
                     def jarFile = "${env.JAR_FILE}"
                     def remoteDir = "${env.REMOTE_DIR}"
-                    def javaCommand = "java -jar ${remoteDir}\\${jarFile} > ${remoteDir}\\output.log 2>&1 &"
+                    def javaCommand = "java -jar ${remoteDir}\\${jarFile}"
 
                     // Ensure remote directory exists
                     bat """
