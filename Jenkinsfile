@@ -10,7 +10,7 @@ pipeline {
             steps {
                 cleanWs()
                 // Checkout code from the repository
-                git 'https://github.com/emon253/cb-analysis-data-hub.git'
+                git url: 'https://github.com/emon253/cb-analysis-data-hub.git', branch: 'main'
             }
         }
         stage('Build') {
@@ -26,9 +26,13 @@ pipeline {
                     def remoteDir = "${env.REMOTE_DIR}"
                     def javaCommand = "java -jar ${remoteDir}\\${jarFile} > ${remoteDir}\\output.log 2>&1 &"
 
-                    // Copy the JAR file to the remote directory
+                    // Ensure remote directory exists
                     bat """
                     if not exist ${remoteDir} mkdir ${remoteDir}
+                    """
+
+                    // Copy the JAR file to the remote directory
+                    bat """
                     copy ${jarFile} ${remoteDir}
                     """
 
