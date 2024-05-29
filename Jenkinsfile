@@ -4,6 +4,7 @@ pipeline {
         APP_NAME = 'scrapify'
         JAR_FILE = 'target/Scrapify-1.jar'
         REMOTE_DIR = 'D:\\app_data_collection'
+        LOG_DIR = 'D:\\app_data_collection\\scrapify\\log'
     }
     stages {
         stage('Checkout') {
@@ -11,6 +12,14 @@ pipeline {
                 cleanWs()
                 // Checkout code from the repository
                 git url: 'https://github.com/emon253/cb-analysis-data-hub.git', branch: 'main'
+            }
+        }
+        stage('Debug Path') {
+            steps {
+                script {
+                    // Debugging step to print directory structure
+                    bat 'dir D:\\app_data_collection\\scrapify\\log\\'
+                }
             }
         }
         stage('Build') {
