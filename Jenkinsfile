@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                cleanWs()
                 // Checkout code from the repository
                 git 'https://github.com/emon253/cb-analysis-data-hub.git'
             }
