@@ -3,7 +3,7 @@ pipeline {
     environment {
         APP_NAME = 'scrapify'
         JAR_FILE = 'target/Scrapify-1.jar'
-        REMOTE_DIR = 'D:\app_data_collection'
+        REMOTE_DIR = 'D:\\app_data_collection'
     }
     stages {
         stage('Checkout') {
