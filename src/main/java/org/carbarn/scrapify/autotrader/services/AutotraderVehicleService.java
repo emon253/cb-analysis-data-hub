@@ -71,7 +71,6 @@ public class AutotraderVehicleService {
         return repository.findBySoldDateBetweenAndStatus(startDate, endDate, "SOLD", pageable);
     }
     @Transactional(readOnly = true)
-
     public AutotraderDataAndSummary getFilteredVehiclesWithSummary(ProductFilterCriteria criteria, Pageable pageable) {
         Page<AutotraderCarListing> vehicles = repository.findAll(matchesCriteria(criteria), pageable);
 
