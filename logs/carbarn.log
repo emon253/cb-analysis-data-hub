@@ -1,23 +1,63 @@
-[2024-05-27 00:24:24] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=18m2s290ms).
-[2024-05-27 00:25:57] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m33s505ms).
-[2024-05-27 00:27:32] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m35s14ms).
-[2024-05-27 00:44:30] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=16m58s116ms).
-[2024-05-27 02:04:31] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h20m746ms).
-[2024-05-27 02:39:54] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=35m23s611ms).
-[2024-05-27 03:01:28] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=21m33s863ms).
-[2024-05-27 03:36:20] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=34m51s329ms).
-[2024-05-27 04:42:27] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h6m7s618ms).
-[2024-05-27 06:02:35] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h20m7s959ms).
-[2024-05-27 07:13:39] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h11m3s951ms).
-[2024-05-27 08:06:59] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=53m20s185ms).
-[2024-05-27 08:35:07] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=28m7s886ms).
-[2024-05-27 09:53:54] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h18m46s332ms).
-[2024-05-27 10:06:46] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=12m51s973ms).
-[2024-05-27 10:08:21] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m35s792ms).
-[2024-05-27 10:09:59] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m37s233ms).
-[2024-05-27 10:11:29] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m30s147ms).
-[2024-05-27 10:21:16] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=9m47s380ms).
-[2024-05-27 10:23:25] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m39s17ms).
-[2024-05-27 15:15:09] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-05-27 15:15:09] [INFO] HikariDataSource.close:350 - HikariPool-5 - Shutdown initiated...
-[2024-05-27 15:15:09] [INFO] HikariDataSource.close:352 - HikariPool-5 - Shutdown completed.
+[2024-05-30 15:53:47] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 35412 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-05-30 15:53:47] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-05-30 15:53:47] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-05-30 15:53:47] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-05-30 15:53:48] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-05-30 15:53:48] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+[2024-05-30 15:53:48] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-05-30 15:53:48] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:53:48] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-05-30 15:53:48] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-05-30 15:53:48] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-05-30 15:53:48] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 718 ms
+[2024-05-30 15:53:48] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-05-30 15:53:48] [INFO] Version.logVersion:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-05-30 15:53:48] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-05-30 15:53:48] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-05-30 15:53:48] [INFO] HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+[2024-05-30 15:53:48] [INFO] HikariPool.checkFailFast:565 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4af6c68d
+[2024-05-30 15:53:48] [INFO] HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+[2024-05-30 15:53:49] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-05-30 15:53:49] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-30 15:53:49] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-05-30 15:53:50] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-05-30 15:53:50] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-05-30 15:53:50] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:53:50] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-05-30 15:53:50] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 2.681 seconds (process running for 3.164)
+[2024-05-30 15:53:50] [INFO] [/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-05-30 15:53:50] [INFO] DispatcherServlet.initServletBean:532 - Initializing Servlet 'dispatcherServlet'
+[2024-05-30 15:53:50] [INFO] DispatcherServlet.initServletBean:554 - Completed initialization in 1 ms
+[2024-05-30 15:55:23] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-30 15:55:23] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-05-30 15:55:23] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-05-30 15:55:25] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 35459 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-05-30 15:55:25] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-05-30 15:55:25] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-05-30 15:55:25] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-05-30 15:55:26] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-05-30 15:55:26] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 17 ms. Found 4 JPA repository interfaces.
+[2024-05-30 15:55:26] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-05-30 15:55:26] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:55:26] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-05-30 15:55:26] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-05-30 15:55:26] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-05-30 15:55:26] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 675 ms
+[2024-05-30 15:55:26] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-05-30 15:55:26] [INFO] Version.logVersion:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-05-30 15:55:26] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-05-30 15:55:26] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-05-30 15:55:26] [INFO] HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+[2024-05-30 15:55:26] [INFO] HikariPool.checkFailFast:565 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@347bd576
+[2024-05-30 15:55:26] [INFO] HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+[2024-05-30 15:55:27] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-05-30 15:55:27] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-30 15:55:27] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-05-30 15:55:28] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-05-30 15:55:28] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-05-30 15:55:28] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:55:28] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-05-30 15:55:28] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 2.295 seconds (process running for 2.567)
+[2024-05-30 15:55:28] [INFO] [/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-05-30 15:55:28] [INFO] DispatcherServlet.initServletBean:532 - Initializing Servlet 'dispatcherServlet'
+[2024-05-30 15:55:28] [INFO] DispatcherServlet.initServletBean:554 - Completed initialization in 1 ms

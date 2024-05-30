@@ -1,5 +1,6 @@
 package org.carbarn.scrapify.autotrader.controllers;
 
+import com.google.gson.Gson;
 import org.carbarn.scrapify.autotrader.services.AutotraderScraperService;
 import org.carbarn.scrapify.autotrader.services.AutotraderPersistenceService;
 import org.carbarn.scrapify.autotrader.services.ScraperStatusService;
@@ -26,6 +27,10 @@ public class ScrapperController {
         this.scraperService = scraperService;
         this.statusService = statusService;
         this.soldUpdateService=soldUpdateService;
+    }
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("<h1>First deploy</h1>");
     }
 
     @GetMapping("/dealerWise/start")

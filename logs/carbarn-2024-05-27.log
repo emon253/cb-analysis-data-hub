@@ -1,0 +1,23 @@
+[2024-05-27 00:24:24] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=18m2s290ms).
+[2024-05-27 00:25:57] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m33s505ms).
+[2024-05-27 00:27:32] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m35s14ms).
+[2024-05-27 00:44:30] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=16m58s116ms).
+[2024-05-27 02:04:31] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h20m746ms).
+[2024-05-27 02:39:54] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=35m23s611ms).
+[2024-05-27 03:01:28] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=21m33s863ms).
+[2024-05-27 03:36:20] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=34m51s329ms).
+[2024-05-27 04:42:27] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h6m7s618ms).
+[2024-05-27 06:02:35] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h20m7s959ms).
+[2024-05-27 07:13:39] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h11m3s951ms).
+[2024-05-27 08:06:59] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=53m20s185ms).
+[2024-05-27 08:35:07] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=28m7s886ms).
+[2024-05-27 09:53:54] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h18m46s332ms).
+[2024-05-27 10:06:46] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=12m51s973ms).
+[2024-05-27 10:08:21] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m35s792ms).
+[2024-05-27 10:09:59] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m37s233ms).
+[2024-05-27 10:11:29] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m30s147ms).
+[2024-05-27 10:21:16] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=9m47s380ms).
+[2024-05-27 10:23:25] [WARN] HikariPool.run:804 - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1m39s17ms).
+[2024-05-27 15:15:09] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-27 15:15:09] [INFO] HikariDataSource.close:350 - HikariPool-5 - Shutdown initiated...
+[2024-05-27 15:15:09] [INFO] HikariDataSource.close:352 - HikariPool-5 - Shutdown completed.
