@@ -3,7 +3,7 @@ pipeline {
     environment {
         TOMCAT_USER = 'carbarn'
         TOMCAT_PASSWORD = 'carbarn@23'
-        TOMCAT_HOST = '34.235.162.213'
+        TOMCAT_HOST = 'localhost'
         TOMCAT_PORT = '8090'
         APP_NAME = 'scrapify'
         WAR_FILE = 'target/Scrapify-1.war'
