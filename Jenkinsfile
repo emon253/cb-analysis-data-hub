@@ -25,8 +25,7 @@ pipeline {
                 script {
                     def warFile = "${env.WAR_FILE}"
                     def tomcatUrl = "http://${env.TOMCAT_HOST}:${env.TOMCAT_PORT}/manager/text/deploy?path=/${env.APP_NAME}&update=true"
-//                     def curlCommand = "curl -u ${env.TOMCAT_USER}:${env.TOMCAT_PASSWORD} -T \"${warFile}\" \"${tomcatUrl}\""
-                    def curlCommand = "curl -X PUT --upload-file ${warFile} ${tomcatUrl}"
+                    def curlCommand = "curl -u ${env.TOMCAT_USER}:${env.TOMCAT_PASSWORD} -T \"${warFile}\" \"${tomcatUrl}\""
 
                     bat curlCommand
                 }
