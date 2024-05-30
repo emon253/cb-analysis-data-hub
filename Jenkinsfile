@@ -50,9 +50,9 @@ pipeline {
 
                     // Kill any running instance of the application
                     bat """
-                    FOR /F "tokens=5" %A IN ('netstat -ano ^| findstr :8082') DO (
-                        echo Killing process with PID %A
-                        taskkill /F /PID %A
+                    FOR /F "tokens=5" %%A IN ('netstat -ano ^| findstr :8082') DO (
+                        echo Killing process with PID %%A
+                        taskkill /F /PID %%A
                     ) || echo No process found on port 8082
                     """
 
