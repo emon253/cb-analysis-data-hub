@@ -13,7 +13,7 @@ pipeline {
             steps {
                 cleanWs()
                 // Checkout code from the repository
-                git 'https://github.com/emon253/cb-analysis-data-hub.git'
+                git branch: 'main', url: 'https://github.com/emon253/cb-analysis-data-hub.git'
             }
         }
         stage('Build') {
