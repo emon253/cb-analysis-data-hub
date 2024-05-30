@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         APP_NAME = 'scrapify'
-        JAR_FILE = 'target/Scrapify-1.jar'
+        JAR_FILE = 'target/*.jar'
         REMOTE_DIR = 'D:\\app_data_collection'
     }
     stages {
