@@ -61,3 +61,33 @@
 [2024-05-30 15:55:28] [INFO] [/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
 [2024-05-30 15:55:28] [INFO] DispatcherServlet.initServletBean:532 - Initializing Servlet 'dispatcherServlet'
 [2024-05-30 15:55:28] [INFO] DispatcherServlet.initServletBean:554 - Completed initialization in 1 ms
+[2024-05-30 15:59:21] [INFO] LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent:211 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2024-05-30 15:59:21] [INFO] Http11NioProtocol.log:173 - Stopping ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:59:21] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-30 15:59:21] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-05-30 15:59:21] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-05-30 15:59:22] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 35459 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-05-30 15:59:22] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-05-30 15:59:22] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-05-30 15:59:22] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 5 ms. Found 4 JPA repository interfaces.
+[2024-05-30 15:59:22] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-05-30 15:59:22] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:59:22] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-05-30 15:59:22] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-05-30 15:59:22] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-05-30 15:59:22] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 203 ms
+[2024-05-30 15:59:22] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-05-30 15:59:22] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-05-30 15:59:22] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-05-30 15:59:22] [INFO] HikariDataSource.getConnection:110 - HikariPool-2 - Starting...
+[2024-05-30 15:59:22] [INFO] HikariPool.checkFailFast:565 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c4bfbb2
+[2024-05-30 15:59:22] [INFO] HikariDataSource.getConnection:123 - HikariPool-2 - Start completed.
+[2024-05-30 15:59:22] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-05-30 15:59:22] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-05-30 15:59:22] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-05-30 15:59:22] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-05-30 15:59:22] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-05-30 15:59:22] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-05-30 15:59:22] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-05-30 15:59:22] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 0.73 seconds (process running for 237.237)
+[2024-05-30 15:59:22] [INFO] ConditionEvaluationDeltaLoggingListener.onApplicationEvent:63 - Condition evaluation unchanged
