@@ -30,7 +30,7 @@ public class ScrapperController {
     }
     @GetMapping("/test")
     public ResponseEntity<String> test() {
-        return ResponseEntity.ok("<h1>5th Deploy with success!</h1>" +
+        return ResponseEntity.ok("<h1>6th Deploy with success!</h1>" +
                 "<br/> Hi Yasin Chowdhury! <br/>You have successfully created CI/CD pipeline with you spring boot application <br/>" +
                 " <h2>----------------ALL THE BEST----------------</h2>");
     }
@@ -42,6 +42,8 @@ public class ScrapperController {
                 try {
                     statusService.switchScraperStatus("RUNNING");
                     scraperService.startScraperForDearWiseData();
+                    statusService.switchScraperStatus("STOPPED");
+
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
@@ -57,9 +59,18 @@ public class ScrapperController {
 
     @GetMapping("/allPage/start")
     public ResponseEntity<String> startAllPageScraper() throws InterruptedException {
-        statusService.switchScraperStatus("RUNNING");
-        scraperService.startScraperPageWiseData();
-        return ResponseEntity.ok("Scraper has been started.");
+        if (scraperThread == null || !scraperThread.isAlive()) {
+            scraperThread = new Thread(() -> {
+                statusService.switchScraperStatus("RUNNING");
+                scraperService.startScraperPageWiseData();
+                statusService.switchScraperStatus("STOPPED");
+            });
+            scraperThread.start();
+            return ResponseEntity.ok("Scraper started.");
+        } else {
+            return ResponseEntity.ok("Scraper is already running.");
+        }
+
     }
 
 
