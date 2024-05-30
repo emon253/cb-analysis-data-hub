@@ -4,6 +4,7 @@ pipeline {
         APP_NAME = 'scrapify'
         JAR_FILE = 'Scrapify-1.jar'
         REMOTE_DIR = 'D:\\app_data_collection'
+        JAR_FILE_PATH = "target\\Scrapify-1.jar"
     }
     stages {
         stage('Checkout') {
@@ -25,23 +26,21 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Correct the path to the JAR file
-                    def jarFile = "target\\${env.JAR_FILE}"
-                    def remoteDir = "${env.REMOTE_DIR}"
-                    def javaCommand = "java -jar ${remoteDir}\\${env.JAR_FILE} > ${remoteDir}\\output.log 2>&1 &"
+                    // Construct the command to run the JAR file
+                    def javaCommand = "java -jar ${REMOTE_DIR}\\${JAR_FILE} > ${REMOTE_DIR}\\output.log 2>&1 &"
 
                     // Debugging step to print paths
-                    echo "JAR File Path: ${jarFile}"
-                    echo "Remote Directory: ${remoteDir}"
+                    echo "JAR File Path: ${JAR_FILE_PATH}"
+                    echo "Remote Directory: ${REMOTE_DIR}"
 
                     // Ensure remote directory exists
                     bat """
-                    if not exist "${remoteDir}" mkdir "${remoteDir}"
+                    if not exist "${REMOTE_DIR}" mkdir "${REMOTE_DIR}"
                     """
 
                     // Copy the JAR file to the remote directory
                     bat """
-                    copy "${jarFile}" "${remoteDir}\\"
+                    copy "${JAR_FILE_PATH}" "${REMOTE_DIR}\\"
                     """
 
                     // Kill any running instance of the application
