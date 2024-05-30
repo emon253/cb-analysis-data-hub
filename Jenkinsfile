@@ -2,8 +2,9 @@ pipeline {
     agent any
     environment {
         APP_NAME = 'scrapify'
-        JAR_FILE = 'target/Scrapify-1.jar'
+        JAR_FILE = 'Scrapify-1.jar'
         REMOTE_DIR = 'D:\\app_data_collection'
+        WORKSPACE_DIR = ''
     }
     stages {
         stage('Checkout') {
@@ -15,19 +16,28 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Build the project with Maven, using the production profile
-                bat 'mvn clean package -Pprod'
+                script {
+                    // Store the workspace directory path
+                    env.WORKSPACE_DIR = pwd()
 
-                // List the contents of the target directory
-                bat 'dir target'
+                    // Build the project with Maven, using the production profile
+                    bat 'mvn clean package -Pprod'
+
+                    // List the contents of the target directory
+                    bat 'dir target'
+                }
             }
         }
         stage('Deploy') {
             steps {
                 script {
-                    def jarFile = "${env.JAR_FILE}"
+                    def jarFile = "${env.WORKSPACE_DIR}\\target\\${env.JAR_FILE}"
                     def remoteDir = "${env.REMOTE_DIR}"
-                    def javaCommand = "java -jar ${remoteDir}\\${jarFile} > ${remoteDir}\\output.log 2>&1 &"
+                    def javaCommand = "java -jar ${remoteDir}\\${env.JAR_FILE} > ${remoteDir}\\output.log 2>&1 &"
+
+                    // Debugging step to print paths
+                    echo "JAR File Path: ${jarFile}"
+                    echo "Remote Directory: ${remoteDir}"
 
                     // Ensure remote directory exists
                     bat """
