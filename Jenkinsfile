@@ -45,7 +45,10 @@ pipeline {
 
                     // Kill any running instance of the application
                     bat """
-                    for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8082') do taskkill /f /pid %%a
+                    FOR /F "tokens=5" %%A IN ('netstat -ano ^| findstr :8082') DO (
+                        echo Killing process with PID %%A
+                        taskkill /F /PID %%A
+                    )
                     """
 
                     // Start the new JAR file
