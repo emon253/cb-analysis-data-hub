@@ -12,19 +12,16 @@ pipeline {
         stage('Checkout') {
             steps {
                 cleanWs()
-                // Checkout code from the repository
                 git branch: 'main', url: 'https://github.com/emon253/cb-analysis-data-hub.git'
             }
         }
         stage('Build') {
             steps {
-                // Build the project with Maven, using the production profile
                 bat 'mvn clean package -Pprod'
             }
         }
         stage('Deploy') {
             steps {
-                // Deploy the WAR file to Tomcat using curl
                 script {
                     def warFile = "${env.WAR_FILE}"
                     def tomcatUrl = "http://${env.TOMCAT_HOST}:${env.TOMCAT_PORT}/manager/text/deploy?path=/${env.APP_NAME}&update=true"
