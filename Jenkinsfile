@@ -43,12 +43,17 @@ pipeline {
                     copy "${JAR_FILE_PATH}" "${REMOTE_DIR}\\"
                     """
 
+                    // List the contents of the remote directory to confirm the copy
+                    bat """
+                    dir ${REMOTE_DIR}
+                    """
+
                     // Kill any running instance of the application
                     bat """
                     FOR /F "tokens=5" %%A IN ('netstat -ano ^| findstr :8082') DO (
-                        echo Killing process with PID %%A
+                        echo Killing process with PID %%A  
                         taskkill /F /PID %%A
-                    )
+                    ) || echo No process found on port 8082
                     """
 
                     // Start the new JAR file
