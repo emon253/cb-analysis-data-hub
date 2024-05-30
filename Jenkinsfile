@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         APP_NAME = 'scrapify'
-        JAR_FILE = 'target/*.jar'
+        JAR_FILE = 'target/Scrapify-1.jar'
         REMOTE_DIR = 'D:\\app_data_collection'
     }
     stages {
@@ -17,6 +17,9 @@ pipeline {
             steps {
                 // Build the project with Maven, using the production profile
                 bat 'mvn clean package -Pprod'
+
+                // List the contents of the target directory
+                bat 'dir target'
             }
         }
         stage('Deploy') {
@@ -24,7 +27,7 @@ pipeline {
                 script {
                     def jarFile = "${env.JAR_FILE}"
                     def remoteDir = "${env.REMOTE_DIR}"
-                    def javaCommand = "java -jar ${remoteDir}\\${jarFile}"
+                    def javaCommand = "java -jar ${remoteDir}\\${jarFile} > ${remoteDir}\\output.log 2>&1 &"
 
                     // Ensure remote directory exists
                     bat """
