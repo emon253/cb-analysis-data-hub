@@ -91,7 +91,7 @@ public class AutotraderScraperService {
                     }
                 }
             }
-
+            currentPage = 1;
         }
 //        soldUpdateService.updateDealerWiseVehicleSoldStatus();
         updateLastPageFlag(1);

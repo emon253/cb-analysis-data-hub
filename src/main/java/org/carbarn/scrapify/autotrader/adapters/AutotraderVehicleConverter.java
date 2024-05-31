@@ -39,7 +39,14 @@ public class AutotraderVehicleConverter {
         carListing.setAutoTraderDealerId(apiResponse.getDealer_id());
         Optional.ofNullable(apiResponse.getLocation()).map(AutotraderLocationResponse::getLat).ifPresent(carListing::setLat);
         Optional.ofNullable(apiResponse.getLocation()).map(AutotraderLocationResponse::getLon).ifPresent(carListing::setLon);
-        Optional.ofNullable(apiResponse.getDealer()).map(AutotraderVehicleConverter::convertResponseToDealerEntity).ifPresent(carListing::setDealer);
+//        Optional.ofNullable(apiResponse.getDealer()).map(AutotraderVehicleConverter::convertResponseToDealerEntity).ifPresent(carListing::setDealer);
+        Optional.ofNullable(apiResponse.getDealer())
+                .map(AutotraderVehicleConverter::convertResponseToDealerEntity)
+                .ifPresent(dealerEntity -> {
+                    dealerEntity.setAutoTraderDealerId(apiResponse.getDealer_id());
+                    carListing.setDealer(dealerEntity);
+                });
+
         // Convert pricing history array if present
         Optional.ofNullable(apiResponse.getPricingHistory())
                 .ifPresent(pricingHistoryResponses -> {
@@ -102,6 +109,7 @@ public class AutotraderVehicleConverter {
 
     public static AutotraderDealer convertResponseToDealerEntity(AutotraderDealerResponse response) {
         AutotraderDealer entity = new AutotraderDealer();
+//        entity.setAutoTraderDealerId(response);
         entity.setTradingName(response.getTrading_name());
         entity.setPhoneLead(response.getPhone_lead());
         entity.setCity(response.getCity());

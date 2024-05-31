@@ -55,7 +55,11 @@ public class AutotraderPersistenceService {
 
     private void updateExistingVehicle(AutotraderCarListing existingVehicle, AutotraderCarListing newVehicle) {
         log.info("Updating existing vehicle information {}", newVehicle);
+        if (existingVehicle.getDealer().getAutoTraderDealerId()==null){
+            getDealer(newVehicle);
+        }
         Boolean updatesMade = AutotraderVehicleConverter.updateInformation(existingVehicle, newVehicle);
+
         if (updatesMade) {
             vehicleRepository.save(existingVehicle);
         } else {
@@ -73,12 +77,23 @@ public class AutotraderPersistenceService {
         vehicleRepository.save(newVehicle);
     }
 
-    private AutotraderDealer getDealer(AutotraderCarListing vehicle) {
-        return Optional.ofNullable(vehicle.getDealer())
-                .map(dealer -> dealerRepository.findByTradingNameAndPhoneLead(dealer.getTradingName(), dealer.getPhoneLead())
-                        .orElseGet(() -> dealerRepository.save(dealer)))
-                .orElse(null);
-    }
+//    private AutotraderDealer getDealer(AutotraderCarListing vehicle) {
+//        return Optional.ofNullable(vehicle.getDealer())
+//                .map(dealer -> dealerRepository.findByTradingNameAndPhoneLead(dealer.getTradingName(), dealer.getPhoneLead())
+//                        .orElseGet(() -> dealerRepository.save(dealer)))
+//                .orElse(null);
+//    }
+private AutotraderDealer getDealer(AutotraderCarListing vehicle) {
+    return Optional.ofNullable(vehicle.getDealer())
+            .map(dealer -> dealerRepository.findByTradingNameAndPhoneLead(dealer.getTradingName(), dealer.getPhoneLead())
+                    .map(existingDealer -> {
+                        log.info("updating dealer id {} ", dealer.getAutoTraderDealerId());
+                        existingDealer.setAutoTraderDealerId(dealer.getAutoTraderDealerId());
+                        return dealerRepository.save(existingDealer);
+                    })
+                    .orElseGet(() -> dealerRepository.save(dealer)))
+            .orElse(null);
+}
 
     private void updatePricingHistory(AutotraderCarListing vehicle) {
         List<AutotraderCarPricingHistory> pricingHistory = vehicle.getPricingHistory();

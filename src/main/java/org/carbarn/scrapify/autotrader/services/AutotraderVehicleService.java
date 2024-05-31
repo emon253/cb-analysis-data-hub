@@ -57,7 +57,6 @@ public class AutotraderVehicleService {
         return repository.findById(id).orElseThrow(() -> new ScrapifyException("Vehicle not found by id: " + id));
     }
     @Transactional(readOnly = true)
-
     public Page<AutotraderCarListing> getVehiclesByStatus(String status, Pageable pageable) {
         return repository.findByStatus(status, pageable);
     }
@@ -66,7 +65,6 @@ public class AutotraderVehicleService {
         return repository.findByVinStartingWith(prefix, pageable);
     }
     @Transactional(readOnly = true)
-
     public Page<AutotraderCarListing> getVehiclesBySoldDateRange(String startDate, String endDate, Pageable pageable) {
         return repository.findBySoldDateBetweenAndStatus(startDate, endDate, "SOLD", pageable);
     }

@@ -58,7 +58,7 @@ public class ScrapperController {
 
 
     @GetMapping("/allPage/start")
-    public ResponseEntity<String> startAllPageScraper() throws InterruptedException {
+    public ResponseEntity<String> startAllPageScraper() {
         if (scraperThread == null || !scraperThread.isAlive()) {
             scraperThread = new Thread(() -> {
                 statusService.switchScraperStatus("RUNNING");
