@@ -5121,3 +5121,89 @@
 [2024-06-01 01:33:30] [INFO] AutotraderScraperService.startScraperForDearWiseData:66 - Requesting page number 4 from URL: https://listings.platform.autotrader.com.au/api/v3/search?page=4&dealer_id=1019261&ipLookup=1&sorting_variation=smart_sort_2&paginate=13
 [2024-06-01 01:33:30] [INFO] AutotraderScraperService.startScraperForDearWiseData:71 - Response success found 0 entries for page 4 with AutotraderVehicleResponse(current_page=4, last_page=3, total=28, next_page_url=null, vehicles=[]) vehicles
 [2024-06-01 01:33:30] [INFO] AutotraderScraperService.startScraperForDearWiseData:99 - Scraping process is complete. All pages for all dealers have been processed.
+[2024-06-01 03:00:19] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m12s109ms).
+[2024-06-01 03:17:21] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m1s600ms).
+[2024-06-01 04:10:34] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m13s125ms).
+[2024-06-01 04:31:44] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m9s791ms).
+[2024-06-01 06:08:03] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h36m19s528ms).
+[2024-06-01 07:23:54] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m50s986ms).
+[2024-06-01 08:04:32] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m37s483ms).
+[2024-06-01 08:46:16] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=41m44s551ms).
+[2024-06-01 08:48:23] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m6s739ms).
+[2024-06-01 08:50:27] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m3s774ms).
+[2024-06-01 08:56:06] [WARN] HikariPool.run:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m39s485ms).
+[2024-06-01 09:05:54] [WARN] ExceptionHandlerExceptionResolver.logException:247 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource scrapify/api/scrapper/update-sold.]
+[2024-06-01 09:07:03] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13595111
+[2024-06-01 09:07:05] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13595111 found in live site
+[2024-06-01 09:07:05] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91408 of 91409 
+[2024-06-01 09:07:05] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13645256
+[2024-06-01 09:07:05] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13645256 found in live site
+[2024-06-01 09:07:05] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91407 of 91409 
+[2024-06-01 09:07:05] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13643693
+[2024-06-01 09:07:06] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13643693 marking as sold at 2024-05-13 06:14:28
+[2024-06-01 09:07:07] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91406 of 91409 
+[2024-06-01 09:07:07] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13629761
+[2024-06-01 09:07:08] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13629761 found in live site
+[2024-06-01 09:07:08] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91405 of 91409 
+[2024-06-01 09:07:08] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13705137
+[2024-06-01 09:07:09] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13705137 marking as sold at 2024-05-27 05:58:34
+[2024-06-01 09:07:10] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91404 of 91409 
+[2024-06-01 09:07:10] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13648184
+[2024-06-01 09:07:10] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13648184 found in live site
+[2024-06-01 09:07:10] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91403 of 91409 
+[2024-06-01 09:07:10] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13625018
+[2024-06-01 09:07:11] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13625018 marking as sold at 2024-05-15 03:59:18
+[2024-06-01 09:07:12] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91402 of 91409 
+[2024-06-01 09:07:12] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13677621
+[2024-06-01 09:07:13] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13677621 found in live site
+[2024-06-01 09:07:13] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91401 of 91409 
+[2024-06-01 09:07:13] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13602649
+[2024-06-01 09:07:14] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13602649 marking as sold at 2024-05-22 03:10:59
+[2024-06-01 09:07:15] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91400 of 91409 
+[2024-06-01 09:07:15] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13647815
+[2024-06-01 09:07:15] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13647815 marking as sold at 2024-05-16 00:42:04
+[2024-06-01 09:07:16] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91399 of 91409 
+[2024-06-01 09:07:16] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13662867
+[2024-06-01 09:07:16] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13662867 found in live site
+[2024-06-01 09:07:16] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91398 of 91409 
+[2024-06-01 09:07:16] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13629865
+[2024-06-01 09:07:17] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13629865 marking as sold at 2024-05-13 07:15:41
+[2024-06-01 09:07:18] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91397 of 91409 
+[2024-06-01 09:07:18] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13619231
+[2024-06-01 09:07:18] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13619231 marking as sold at 2024-05-22 07:11:45
+[2024-06-01 09:07:19] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91396 of 91409 
+[2024-06-01 09:07:19] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13630628
+[2024-06-01 09:07:20] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13630628 found in live site
+[2024-06-01 09:07:20] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91395 of 91409 
+[2024-06-01 09:07:20] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13648610
+[2024-06-01 09:07:20] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13648610 found in live site
+[2024-06-01 09:07:20] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91394 of 91409 
+[2024-06-01 09:07:20] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13643156
+[2024-06-01 09:07:21] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13643156 found in live site
+[2024-06-01 09:07:21] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91393 of 91409 
+[2024-06-01 09:07:21] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13599314
+[2024-06-01 09:07:21] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13599314 marking as sold at 2024-05-20 03:32:08
+[2024-06-01 09:07:22] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91392 of 91409 
+[2024-06-01 09:07:22] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13588119
+[2024-06-01 09:07:22] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13588119 marking as sold at 2024-05-15 01:11:34
+[2024-06-01 09:07:23] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91391 of 91409 
+[2024-06-01 09:07:23] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13631853
+[2024-06-01 09:07:24] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13631853 marking as sold at 2024-05-24 04:59:22
+[2024-06-01 09:07:25] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91390 of 91409 
+[2024-06-01 09:07:25] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13649901
+[2024-06-01 09:07:26] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-01 09:07:26] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13649901 found in live site
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91389 of 91409 
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13740227
+[2024-06-01 09:07:26] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13740227 found in live site
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91388 of 91409 
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13635349
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:109 - Vehicle 13635349 found in live site
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91387 of 91409 
+[2024-06-01 09:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13608104
+[2024-06-01 09:07:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$0:102 - Vehicle 13608104 marking as sold at 2024-05-20 06:52:29
+[2024-06-01 09:07:27] [ERROR] VehicleSoldUpdateService.updateVehicles:84 - Error while updating sold status for vehicle 13608104: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to 'DataSourceProperties' : prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true
+[2024-06-01 09:07:27] [INFO] VehicleSoldUpdateService.updateVehicles:87 - Remaining 91386 of 91409 
+[2024-06-01 09:07:27] [INFO] VehicleSoldUpdateService.updateVehicles:65 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13709627
