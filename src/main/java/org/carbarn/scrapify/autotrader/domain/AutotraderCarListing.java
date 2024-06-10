@@ -64,7 +64,7 @@ public class AutotraderCarListing extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "dealer_id")
-    @JsonIgnoreProperties("autotraderCarListings") // prevent serialization of the back reference
+    @JsonIgnoreProperties("autotraderCarListings")
     private AutotraderDealer dealer;
 
 }

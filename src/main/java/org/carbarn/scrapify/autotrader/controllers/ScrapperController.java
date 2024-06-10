@@ -30,7 +30,7 @@ public class ScrapperController {
     }
     @GetMapping("/test")
     public ResponseEntity<String> test() {
-        return ResponseEntity.ok("<h1>6th Deploy with success!</h1>" +
+        return ResponseEntity.ok("<h1>7th Deploy with success!</h1>" +
                 "<br/> Hi Yasin Chowdhury! <br/>You have successfully created CI/CD pipeline with you spring boot application <br/>" +
                 " <h2>----------------ALL THE BEST----------------</h2>");
     }
