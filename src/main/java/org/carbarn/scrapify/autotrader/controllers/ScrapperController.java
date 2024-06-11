@@ -5,12 +5,18 @@ import org.carbarn.scrapify.autotrader.services.AutotraderScraperService;
 import org.carbarn.scrapify.autotrader.services.AutotraderPersistenceService;
 import org.carbarn.scrapify.autotrader.services.ScraperStatusService;
 import org.carbarn.scrapify.autotrader.services.VehicleSoldUpdateService;
+import org.carbarn.scrapify.consts.ConstData;
 import org.carbarn.scrapify.exceptions.ScrapifyException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/scrapper")
@@ -26,8 +32,9 @@ public class ScrapperController {
     public ScrapperController(AutotraderScraperService scraperService, ScraperStatusService statusService, VehicleSoldUpdateService soldUpdateService) {
         this.scraperService = scraperService;
         this.statusService = statusService;
-        this.soldUpdateService=soldUpdateService;
+        this.soldUpdateService = soldUpdateService;
     }
+
     @GetMapping("/test")
     public ResponseEntity<String> test() {
         return ResponseEntity.ok("<h1>7th Deploy with success!</h1>" +
@@ -36,12 +43,12 @@ public class ScrapperController {
     }
 
     @GetMapping("/dealerWise/start")
-    public ResponseEntity<String> startDealerWiseScraper()  {
+    public ResponseEntity<String> startDealerWiseScraper() {
         if (scraperThread == null || !scraperThread.isAlive()) {
             scraperThread = new Thread(() -> {
                 try {
                     statusService.switchScraperStatus("RUNNING");
-                    scraperService.startScraperForDearWiseData();
+                    scraperService.startScraperForDearWiseData(ConstData.getDealers());
                     statusService.switchScraperStatus("STOPPED");
 
                 } catch (InterruptedException e) {
@@ -56,6 +63,27 @@ public class ScrapperController {
     }
 
 
+    @GetMapping("/dealer-individual/start")
+    public ResponseEntity<?> startIndividualDealerScraper(@RequestParam(required = false) String dealers) {
+        if (dealers == null || dealers.trim().isEmpty()) {
+            return ResponseEntity.badRequest().body("Dealers parameter is required and cannot be empty.");
+        }
+
+        try {
+            List<Long> dealerIds = Arrays.stream(dealers.split(","))
+                    .map(String::trim)
+                    .map(Long::parseLong)
+                    .collect(Collectors.toList());
+
+            scraperService.startScraperForDearWiseData(dealerIds);
+            return ResponseEntity.ok("Scraping completed.");
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().body("Dealers parameter must contain a comma-separated list of numbers.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during scraping.");
+        }
+    }
 
     @GetMapping("/allPage/start")
     public ResponseEntity<String> startAllPageScraper() {
@@ -104,8 +132,9 @@ public class ScrapperController {
     public void updateVehicles() {
         soldUpdateService.updateVehicleSoldStatus();
     }
+
     @GetMapping("/update-sold-dealerWise")
     public void updateDealerWiseVehicles() {
-        soldUpdateService.updateDealerWiseVehicleSoldStatus();
+        soldUpdateService.updateDealerWiseVehicleSoldStatus(ConstData.getDealers());
     }
 }

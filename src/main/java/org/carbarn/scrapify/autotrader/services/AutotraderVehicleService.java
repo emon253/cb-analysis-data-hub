@@ -64,10 +64,12 @@ public class AutotraderVehicleService {
     public Page<AutotraderCarListing> getVehiclesByVinStartsWith(String prefix, Pageable pageable) {
         return repository.findByVinStartingWith(prefix, pageable);
     }
+
     @Transactional(readOnly = true)
     public Page<AutotraderCarListing> getVehiclesBySoldDateRange(String startDate, String endDate, Pageable pageable) {
         return repository.findBySoldDateBetweenAndStatus(startDate, endDate, "SOLD", pageable);
     }
+
     @Transactional(readOnly = true)
     public AutotraderDataAndSummary getFilteredVehiclesWithSummary(ProductFilterCriteria criteria, Pageable pageable) {
         Page<AutotraderCarListing> vehicles = repository.findAll(matchesCriteria(criteria), pageable);

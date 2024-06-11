@@ -45,7 +45,7 @@ public class AutotraderScraperService {
         this.soldUpdateService = soldUpdateService;
     }
 
-    public void startScraperForDearWiseData() throws InterruptedException {
+    public void startScraperForDearWiseData(List<Long> dealers) throws InterruptedException {
 //        System.out.println(statusService.getScraperStatus("AUTOTRADER_SCRAPPER_STATUS"));
 //        if (!statusService.getScraperStatus("AUTOTRADER_SCRAPPER_STATUS").equals("RUNNING")) {
 //            log.info("Scraper is set to STOPPED. Exiting...");
@@ -54,8 +54,8 @@ public class AutotraderScraperService {
 
         long currentPage = getLastPageFlagValue();
 
-        for (int i = getLastDealerFlagValue(); i < ConstData.getDealers().size(); i++) {
-            long dealerId = ConstData.getDealers().get(i);
+        for (int i = getLastDealerFlagValue(); i < dealers.size(); i++) {
+            long dealerId = dealers.get(i);
             log.info("Initiating scraping for dealer: index: {}, id: {}", i, dealerId);
             boolean hasNextPage = true;
             while (hasNextPage) {
@@ -87,7 +87,7 @@ public class AutotraderScraperService {
                     log.error("Error fetching data: ", e);
                     if (hasNextPage) {
                         updateLastPageFlag(currentPage + 1);
-                        startScraperForDearWiseData();
+                        startScraperForDearWiseData(dealers);
                     }
                 }
             }
@@ -131,10 +131,11 @@ public class AutotraderScraperService {
         } catch (HttpClientErrorException.TooManyRequests e) {
             log.warn("Rate limiting error: Too many requests. Waiting before retrying...");
         } catch (Exception e) {
-            log.error("Error fetching data: ", e);
-            if (hasNextPage) {
-                updateLastPageFlag(currentPage + 1);
-                startScraperPageWiseData();
+            log.error("Error fetching data: ", e.getMessage());
+            if (e.getMessage().contains("Elasticsearch result window is too large")) {
+                log.info("Page-wise scraping process is complete.");
+                updateLastPageFlag(1);
+                return;
             }
         }
 

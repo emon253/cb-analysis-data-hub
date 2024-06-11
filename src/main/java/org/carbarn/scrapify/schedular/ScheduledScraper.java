@@ -6,6 +6,7 @@ import org.carbarn.scrapify.autotrader.dto.AutotraderScrapperStatus;
 import org.carbarn.scrapify.autotrader.repositories.FlagRepository;
 import org.carbarn.scrapify.autotrader.services.AutotraderScraperService;
 import org.carbarn.scrapify.autotrader.services.VehicleSoldUpdateService;
+import org.carbarn.scrapify.consts.ConstData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -29,7 +30,7 @@ public class ScheduledScraper {
 
     public void scrapeUpdateStatus() {
         log.info("Updating status started...");
-        soldUpdateService.updateDealerWiseVehicleSoldStatus();
+        soldUpdateService.updateDealerWiseVehicleSoldStatus(ConstData.getDealers());
         log.info("Updating status ended...");
 
     }
@@ -40,9 +41,9 @@ public class ScheduledScraper {
     public void scrapeDataDealerWise() throws InterruptedException {
         log.info("Scraping started...");
         if (shouldRun(AutotraderScrapperStatus.AUTOTRADER_SCRAPPER_STATUS_GROUP_WISE.name())) {
-            scraperService.startScraperForDearWiseData();
+            scraperService.startScraperForDearWiseData(ConstData.getDealers());
         }
-        soldUpdateService.updateDealerWiseVehicleSoldStatus();
+        soldUpdateService.updateDealerWiseVehicleSoldStatus(ConstData.getDealers());
         log.info("Completed Scraping and sold status update...");
     }
 
