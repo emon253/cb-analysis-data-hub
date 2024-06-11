@@ -34,6 +34,8 @@ public interface AutotraderVehicleRepository extends JpaRepository<AutotraderCar
     }
 
     Page<AutotraderCarListing> findByStatus(String status, Pageable pageable);
+    List<AutotraderCarListing> findByStatus(String status);
+
 
     Page<AutotraderCarListing> findByVinStartingWith(String prefix, Pageable pageable);
 

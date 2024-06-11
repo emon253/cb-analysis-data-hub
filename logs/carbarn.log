@@ -7821,3 +7821,154 @@ Caused by: java.lang.IllegalStateException: Session/EntityManager is closed
 [2024-06-11 12:56:39] [INFO] AutotraderScraperService.startScraperPageWiseData:111 - Requesting page number 19000 from URL: https://listings.platform.autotrader.com.au/api/v3/search?page=19000
 [2024-06-11 12:56:43] [ERROR] AutotraderScraperService.startScraperPageWiseData:134 - Error fetching data: 
 [2024-06-11 12:56:43] [INFO] AutotraderScraperService.startScraperPageWiseData:136 - Page-wise scraping process is complete.
+[2024-06-11 13:16:20] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 13:16:21] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-06-11 13:16:21] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-06-11 13:16:24] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 12994 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-06-11 13:16:24] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-06-11 13:16:24] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-06-11 13:16:24] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-06-11 13:16:24] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-06-11 13:16:24] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 20 ms. Found 4 JPA repository interfaces.
+[2024-06-11 13:16:24] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-06-11 13:16:24] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-06-11 13:16:24] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-06-11 13:16:24] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-06-11 13:16:24] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-06-11 13:16:24] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 703 ms
+[2024-06-11 13:16:24] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-06-11 13:16:24] [INFO] Version.logVersion:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-06-11 13:16:24] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-06-11 13:16:25] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-06-11 13:16:25] [INFO] HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+[2024-06-11 13:16:25] [INFO] HikariPool.checkFailFast:565 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19381453
+[2024-06-11 13:16:25] [INFO] HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+[2024-06-11 13:16:25] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-06-11 13:16:25] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 13:16:25] [INFO] QueryEnhancerFactory.<clinit>:49 - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-06-11 13:16:26] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-06-11 13:16:26] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-06-11 13:16:26] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-06-11 13:16:26] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-06-11 13:16:26] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-06-11 13:16:26] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 2.8 seconds (process running for 3.192)
+[2024-06-11 13:16:27] [INFO] [/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-06-11 13:16:27] [INFO] DispatcherServlet.initServletBean:532 - Initializing Servlet 'dispatcherServlet'
+[2024-06-11 13:16:27] [INFO] DispatcherServlet.initServletBean:554 - Completed initialization in 1 ms
+[2024-06-11 13:16:59] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 13:16:59] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-06-11 13:16:59] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-06-11 13:17:02] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 13006 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-06-11 13:17:02] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-06-11 13:17:02] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-06-11 13:17:02] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-06-11 13:17:03] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-06-11 13:17:03] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+[2024-06-11 13:17:03] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-06-11 13:17:03] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-06-11 13:17:03] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-06-11 13:17:03] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-06-11 13:17:03] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-06-11 13:17:03] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 1201 ms
+[2024-06-11 13:17:04] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-06-11 13:17:04] [INFO] Version.logVersion:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-06-11 13:17:04] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-06-11 13:17:04] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-06-11 13:17:04] [INFO] HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+[2024-06-11 13:17:04] [INFO] HikariPool.checkFailFast:565 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33613f7f
+[2024-06-11 13:17:04] [INFO] HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+[2024-06-11 13:17:04] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-06-11 13:17:04] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 13:17:05] [INFO] QueryEnhancerFactory.<clinit>:49 - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-06-11 13:17:05] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-06-11 13:17:05] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-06-11 13:17:05] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-06-11 13:17:05] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-06-11 13:17:05] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-06-11 13:17:05] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 3.409 seconds (process running for 3.974)
+[2024-06-11 13:17:06] [INFO] [/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-06-11 13:17:06] [INFO] DispatcherServlet.initServletBean:532 - Initializing Servlet 'dispatcherServlet'
+[2024-06-11 13:17:06] [INFO] DispatcherServlet.initServletBean:554 - Completed initialization in 1 ms
+[2024-06-11 13:17:24] [INFO] VehicleSoldUpdateService.updateVehicleSoldStatus:42 - 78425 vehicles found to process for update
+[2024-06-11 13:17:24] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13595111
+[2024-06-11 13:17:25] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13595111 found in live site
+[2024-06-11 13:17:25] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78424 of 78425 
+[2024-06-11 13:17:25] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13629761
+[2024-06-11 13:17:26] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13629761 found in live site
+[2024-06-11 13:17:26] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78423 of 78425 
+[2024-06-11 13:17:26] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13648184
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13648184 found in live site
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78422 of 78425 
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13662867
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13662867 found in live site
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78421 of 78425 
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13630628
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13630628 found in live site
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78420 of 78425 
+[2024-06-11 13:17:27] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13648610
+[2024-06-11 13:17:28] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13648610 found in live site
+[2024-06-11 13:17:28] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78419 of 78425 
+[2024-06-11 13:17:28] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13643156
+[2024-06-11 13:17:28] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13643156 found in live site
+[2024-06-11 13:17:28] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78418 of 78425 
+[2024-06-11 13:17:28] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13649901
+[2024-06-11 13:17:29] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13649901 found in live site
+[2024-06-11 13:17:29] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78417 of 78425 
+[2024-06-11 13:17:29] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13740227
+[2024-06-11 13:17:30] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13740227 found in live site
+[2024-06-11 13:17:30] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78416 of 78425 
+[2024-06-11 13:17:30] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13635349
+[2024-06-11 13:17:30] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13635349 found in live site
+[2024-06-11 13:17:30] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78415 of 78425 
+[2024-06-11 13:17:30] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13635336
+[2024-06-11 13:17:31] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13635336 found in live site
+[2024-06-11 13:17:31] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78414 of 78425 
+[2024-06-11 13:17:31] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13650022
+[2024-06-11 13:17:31] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13650022 found in live site
+[2024-06-11 13:17:31] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78413 of 78425 
+[2024-06-11 13:17:31] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13700000
+[2024-06-11 13:17:32] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13700000 found in live site
+[2024-06-11 13:17:32] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78412 of 78425 
+[2024-06-11 13:17:32] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13625996
+[2024-06-11 13:17:32] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13625996 found in live site
+[2024-06-11 13:17:32] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78411 of 78425 
+[2024-06-11 13:17:32] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13642997
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13642997 found in live site
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78410 of 78425 
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13639916
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13639916 found in live site
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78409 of 78425 
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13621303
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13621303 found in live site
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78408 of 78425 
+[2024-06-11 13:17:33] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13637961
+[2024-06-11 13:17:34] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13637961 found in live site
+[2024-06-11 13:17:34] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78407 of 78425 
+[2024-06-11 13:17:34] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13710597
+[2024-06-11 13:17:34] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13710597 found in live site
+[2024-06-11 13:17:34] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78406 of 78425 
+[2024-06-11 13:17:34] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13647355
+[2024-06-11 13:17:35] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13647355 found in live site
+[2024-06-11 13:17:35] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78405 of 78425 
+[2024-06-11 13:17:35] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13594038
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13594038 found in live site
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78404 of 78425 
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13610612
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13610612 found in live site
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78403 of 78425 
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13637982
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13637982 found in live site
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78402 of 78425 
+[2024-06-11 13:17:36] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13648441
+[2024-06-11 13:17:37] [ERROR] VehicleSoldUpdateService.updateVehicles:84 - HTTP Error while updating sold status for vehicle 13648441: 400 Bad Request: "{"errorMsg":"Listing not found"}"
+[2024-06-11 13:17:37] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78401 of 78425 
+[2024-06-11 13:17:37] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13640744
+[2024-06-11 13:17:37] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13640744 found in live site
+[2024-06-11 13:17:37] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78400 of 78425 
+[2024-06-11 13:17:37] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13620232
+[2024-06-11 13:17:38] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 13:17:38] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-06-11 13:17:38] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-06-11 13:17:38] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:111 - Vehicle 13620232 found in live site
+[2024-06-11 13:17:38] [INFO] VehicleSoldUpdateService.updateVehicles:89 - Remaining 78399 of 78425 
+[2024-06-11 13:17:38] [INFO] VehicleSoldUpdateService.updateVehicles:67 - Request for url https://listings.platform.autotrader.com.au/api/v3/listings/13725602
