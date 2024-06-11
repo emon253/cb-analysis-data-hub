@@ -1,8 +1,7 @@
 package org.carbarn.scrapify.autotrader.services;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.Expression;
-import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.*;
 import org.carbarn.scrapify.autotrader.domain.AutotraderCarListing;
 import org.carbarn.scrapify.autotrader.domain.AutotraderDealer;
 import org.carbarn.scrapify.autotrader.dto.ProductFilterCriteria;
@@ -26,6 +25,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +39,7 @@ public class AutotraderVehicleService {
         this.repository = repository;
         this.dealerRepository = dealerRepository;
     }
+
     @Transactional(readOnly = true)
     public Page<AutotraderCarListing> getAllVehicle(Pageable pageable) {
         return repository.findAll(pageable);
@@ -48,6 +49,7 @@ public class AutotraderVehicleService {
         AutotraderDealer dealer = dealerRepository.findById(dealerId).orElseThrow(() -> new ScrapifyException("Dealer not found by id: " + dealerId));
         return repository.findByDealer(dealer, pageable);
     }
+
     @Transactional(readOnly = true)
     public Page<AutotraderCarListing> getAllVehicleByAutotraderDealerId(Long dealerId, Pageable pageable) {
         return repository.getAllVehicleByAutoTraderDealerId(dealerId, pageable);
@@ -56,6 +58,7 @@ public class AutotraderVehicleService {
     public AutotraderCarListing getById(Long id) {
         return repository.findById(id).orElseThrow(() -> new ScrapifyException("Vehicle not found by id: " + id));
     }
+
     @Transactional(readOnly = true)
     public Page<AutotraderCarListing> getVehiclesByStatus(String status, Pageable pageable) {
         return repository.findByStatus(status, pageable);
@@ -118,7 +121,7 @@ public class AutotraderVehicleService {
             if (criteria.getShowListedDealersVehicles()) {
                 List<Predicate> modelPredicates = new ArrayList<>();
                 for (Long dealerId : ConstData.getDealers()) {
-                    modelPredicates.add(criteriaBuilder.equal(root.get("autoTraderDealerId"),dealerId));
+                    modelPredicates.add(criteriaBuilder.equal(root.get("autoTraderDealerId"), dealerId));
                 }
                 predicates.add(criteriaBuilder.or(modelPredicates.toArray(new Predicate[0])));
             }
@@ -134,7 +137,6 @@ public class AutotraderVehicleService {
                 predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("manufactureYear"), criteria.getMaxYear()));
             }
 
-
             if (criteria.getStatus() != null && !criteria.getStatus().isEmpty()) {
                 predicates.add(criteriaBuilder.equal(root.get("status"), criteria.getStatus()));
             }
@@ -149,29 +151,30 @@ public class AutotraderVehicleService {
 
             // Assuming soldDate is a string in format 'YYYY-MM-DD HH:MM:SS'
             Expression<String> dateStringExpr = criteriaBuilder.function("DATE", String.class, root.get("soldDate"));
-            if (criteria.getMinSoldDate() != null && criteria.getMaxSoldDate() != null) {
-                predicates.add(criteriaBuilder.between(dateStringExpr,
-                        criteria.getMinSoldDate(),
-                        criteria.getMaxSoldDate()));
-            } else if (criteria.getMinSoldDate() != null) {
-                predicates.add(criteriaBuilder.greaterThanOrEqualTo(dateStringExpr, criteria.getMinSoldDate()));
-            } else if (criteria.getMaxSoldDate() != null) {
-                predicates.add(criteriaBuilder.lessThanOrEqualTo(dateStringExpr, criteria.getMaxSoldDate()));
-            }
-
-            // Assuming soldDate is a string in format 'YYYY-MM-DD HH:MM:SS'
-            Expression<String> dateExpr = criteriaBuilder.function("DATE", String.class, root.get("createdAt"));
+            Expression<String> createdDateExpr = criteriaBuilder.function("DATE", String.class, root.get("createdAt"));
             if (criteria.getMinListingDate() != null && criteria.getMaxListingDate() != null) {
-                predicates.add(criteriaBuilder.between(dateExpr,
-                        criteria.getMinListingDate(),
-                        criteria.getMaxListingDate()));
+                predicates.add(criteriaBuilder.or(
+                        criteriaBuilder.between(createdDateExpr,
+                                criteria.getMinListingDate(),
+                                criteria.getMaxListingDate()),
+                        criteriaBuilder.between(dateStringExpr,
+                                criteria.getMinListingDate(),
+                                criteria.getMaxListingDate())
+                ));
             } else if (criteria.getMinListingDate() != null) {
-                predicates.add(criteriaBuilder.greaterThanOrEqualTo(dateExpr, criteria.getMinListingDate()));
+                predicates.add(criteriaBuilder.or(
+                        criteriaBuilder.greaterThanOrEqualTo(createdDateExpr, criteria.getMinListingDate()),
+                        criteriaBuilder.greaterThanOrEqualTo(dateStringExpr, criteria.getMinListingDate())
+                ));
             } else if (criteria.getMaxListingDate() != null) {
-                predicates.add(criteriaBuilder.lessThanOrEqualTo(dateExpr, criteria.getMaxListingDate()));
+                predicates.add(criteriaBuilder.or(
+                        criteriaBuilder.lessThanOrEqualTo(createdDateExpr, criteria.getMaxListingDate()),
+                        criteriaBuilder.lessThanOrEqualTo(dateStringExpr, criteria.getMaxListingDate())
+                ));
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }
+
 }

@@ -24,8 +24,9 @@ public class AutotraderDataSummaryController {
             @RequestParam(required = false) String startDate,
             @RequestParam(required = false) String endDate,
             @RequestParam(required = false) Long dealerId,
+            @RequestParam(required = false) String vin,
             Pageable pageable) {
-        return vehicleService.getDealerSalesSummary(startDate, endDate, dealerId, pageable);
+        return vehicleService.getDealerSalesSummary(startDate, endDate, dealerId, vin, pageable);
     }
 
 
