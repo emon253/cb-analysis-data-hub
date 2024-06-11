@@ -11560,3 +11560,371 @@ The last packet successfully received from the server was 47 milliseconds ago. T
 [2024-06-11 14:52:30] [INFO] VehicleSoldUpdateService.updateVehicles:90 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13637961
 [2024-06-11 14:52:31] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:137 - Vehicle 13637961 found in live site
 [2024-06-11 14:52:31] [INFO] VehicleSoldUpdateService.updateVehicles:113 - Remaining 82 of 100 and batch 1 of 785
+[2024-06-11 15:06:24] [INFO] ScrapifyApplication.logStarting:50 - Starting ScrapifyApplication using Java 17.0.10 with PID 15017 (/Volumes/workspace/projects/carbarn/Scrapify/target/classes started by yasin in /Volumes/workspace/projects/carbarn/Scrapify)
+[2024-06-11 15:06:24] [INFO] ScrapifyApplication.logStartupProfileInfo:660 - The following 1 profile is active: "dev"
+[2024-06-11 15:06:24] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-06-11 15:06:24] [INFO] DevToolsPropertyDefaultsPostProcessor.logTo:252 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-06-11 15:06:25] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-06-11 15:06:25] [INFO] RepositoryConfigurationDelegate.registerRepositoriesIn:211 - Finished Spring Data repository scanning in 21 ms. Found 4 JPA repository interfaces.
+[2024-06-11 15:06:25] [INFO] TomcatWebServer.initialize:109 - Tomcat initialized with port 8081 (http)
+[2024-06-11 15:06:25] [INFO] Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8081"]
+[2024-06-11 15:06:25] [INFO] StandardService.log:173 - Starting service [Tomcat]
+[2024-06-11 15:06:25] [INFO] StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+[2024-06-11 15:06:25] [INFO] [/].log:173 - Initializing Spring embedded WebApplicationContext
+[2024-06-11 15:06:25] [INFO] ServletWebServerApplicationContext.prepareWebApplicationContext:296 - Root WebApplicationContext: initialization completed in 801 ms
+[2024-06-11 15:06:25] [INFO] LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-06-11 15:06:26] [INFO] Version.logVersion:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-06-11 15:06:26] [INFO] RegionFactoryInitiator.initiateService:50 - HHH000026: Second-level cache disabled
+[2024-06-11 15:06:26] [INFO] SpringPersistenceUnitInfo.addTransformer:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-06-11 15:06:26] [INFO] HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+[2024-06-11 15:06:26] [INFO] HikariPool.checkFailFast:565 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79d9c9ee
+[2024-06-11 15:06:26] [INFO] HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+[2024-06-11 15:06:26] [INFO] JtaPlatformInitiator.initiateService:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-06-11 15:06:26] [INFO] LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 15:06:27] [INFO] QueryEnhancerFactory.<clinit>:49 - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-06-11 15:06:27] [WARN] JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-06-11 15:06:27] [WARN] OptionalLiveReloadServer.startServer:62 - Unable to start LiveReload server
+[2024-06-11 15:06:27] [INFO] EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-06-11 15:06:27] [INFO] Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8081"]
+[2024-06-11 15:06:27] [INFO] TomcatWebServer.start:241 - Tomcat started on port 8081 (http) with context path ''
+[2024-06-11 15:06:27] [INFO] ScrapifyApplication.logStarted:56 - Started ScrapifyApplication in 3.276 seconds (process running for 3.723)
+[2024-06-11 15:06:28] [INFO] [/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-06-11 15:06:28] [INFO] DispatcherServlet.initServletBean:532 - Initializing Servlet 'dispatcherServlet'
+[2024-06-11 15:06:28] [INFO] DispatcherServlet.initServletBean:554 - Completed initialization in 0 ms
+[2024-06-11 15:06:32] [INFO] VehicleSoldUpdateService.updateVehicleSoldStatus:58 - Processing batch no 1 of 785 found 100 vehicles
+[2024-06-11 15:06:33] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13595111
+[2024-06-11 15:06:35] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13595111 found in live site
+[2024-06-11 15:06:35] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 99 of 100 and batch 1 of 785
+[2024-06-11 15:06:37] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13629761
+[2024-06-11 15:06:37] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13629761 found in live site
+[2024-06-11 15:06:37] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 98 of 100 and batch 1 of 785
+[2024-06-11 15:06:39] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648184
+[2024-06-11 15:06:40] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648184 found in live site
+[2024-06-11 15:06:40] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 97 of 100 and batch 1 of 785
+[2024-06-11 15:06:41] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13662867
+[2024-06-11 15:06:41] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13662867 found in live site
+[2024-06-11 15:06:41] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 96 of 100 and batch 1 of 785
+[2024-06-11 15:06:43] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13630628
+[2024-06-11 15:06:44] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13630628 found in live site
+[2024-06-11 15:06:44] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 95 of 100 and batch 1 of 785
+[2024-06-11 15:06:45] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648610
+[2024-06-11 15:06:46] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648610 found in live site
+[2024-06-11 15:06:46] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 94 of 100 and batch 1 of 785
+[2024-06-11 15:06:47] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13643156
+[2024-06-11 15:06:48] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13643156 found in live site
+[2024-06-11 15:06:48] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 93 of 100 and batch 1 of 785
+[2024-06-11 15:06:50] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13649901
+[2024-06-11 15:06:50] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13649901 found in live site
+[2024-06-11 15:06:50] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 92 of 100 and batch 1 of 785
+[2024-06-11 15:06:52] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13740227
+[2024-06-11 15:06:52] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13740227 found in live site
+[2024-06-11 15:06:52] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 91 of 100 and batch 1 of 785
+[2024-06-11 15:06:54] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13635349
+[2024-06-11 15:06:54] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13635349 found in live site
+[2024-06-11 15:06:54] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 90 of 100 and batch 1 of 785
+[2024-06-11 15:06:56] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13635336
+[2024-06-11 15:06:56] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13635336 found in live site
+[2024-06-11 15:06:56] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 89 of 100 and batch 1 of 785
+[2024-06-11 15:06:58] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13650022
+[2024-06-11 15:06:58] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13650022 found in live site
+[2024-06-11 15:06:58] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 88 of 100 and batch 1 of 785
+[2024-06-11 15:07:00] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13700000
+[2024-06-11 15:07:00] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13700000 found in live site
+[2024-06-11 15:07:00] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 87 of 100 and batch 1 of 785
+[2024-06-11 15:07:01] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13625996
+[2024-06-11 15:07:02] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13625996 found in live site
+[2024-06-11 15:07:02] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 86 of 100 and batch 1 of 785
+[2024-06-11 15:07:03] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13642997
+[2024-06-11 15:07:04] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13642997 found in live site
+[2024-06-11 15:07:04] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 85 of 100 and batch 1 of 785
+[2024-06-11 15:07:06] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13639916
+[2024-06-11 15:07:06] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13639916 found in live site
+[2024-06-11 15:07:06] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 84 of 100 and batch 1 of 785
+[2024-06-11 15:07:07] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13621303
+[2024-06-11 15:07:08] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13621303 found in live site
+[2024-06-11 15:07:08] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 83 of 100 and batch 1 of 785
+[2024-06-11 15:07:09] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13637961
+[2024-06-11 15:07:10] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13637961 found in live site
+[2024-06-11 15:07:10] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 82 of 100 and batch 1 of 785
+[2024-06-11 15:07:11] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13710597
+[2024-06-11 15:07:12] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13710597 found in live site
+[2024-06-11 15:07:12] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 81 of 100 and batch 1 of 785
+[2024-06-11 15:07:13] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13647355
+[2024-06-11 15:07:14] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13647355 found in live site
+[2024-06-11 15:07:14] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 80 of 100 and batch 1 of 785
+[2024-06-11 15:07:15] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13594038
+[2024-06-11 15:07:16] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13594038 found in live site
+[2024-06-11 15:07:16] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 79 of 100 and batch 1 of 785
+[2024-06-11 15:07:17] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13610612
+[2024-06-11 15:07:17] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13610612 found in live site
+[2024-06-11 15:07:17] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 78 of 100 and batch 1 of 785
+[2024-06-11 15:07:19] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13637982
+[2024-06-11 15:07:19] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13637982 found in live site
+[2024-06-11 15:07:19] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 77 of 100 and batch 1 of 785
+[2024-06-11 15:07:21] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13640744
+[2024-06-11 15:07:21] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13640744 found in live site
+[2024-06-11 15:07:21] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 76 of 100 and batch 1 of 785
+[2024-06-11 15:07:23] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13620232
+[2024-06-11 15:07:23] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13620232 found in live site
+[2024-06-11 15:07:23] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 75 of 100 and batch 1 of 785
+[2024-06-11 15:07:25] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13725602
+[2024-06-11 15:07:25] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13725602 found in live site
+[2024-06-11 15:07:25] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 74 of 100 and batch 1 of 785
+[2024-06-11 15:07:26] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13638658
+[2024-06-11 15:07:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13638658 found in live site
+[2024-06-11 15:07:27] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 73 of 100 and batch 1 of 785
+[2024-06-11 15:07:28] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13644072
+[2024-06-11 15:07:29] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13644072 found in live site
+[2024-06-11 15:07:29] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 72 of 100 and batch 1 of 785
+[2024-06-11 15:07:30] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13592504
+[2024-06-11 15:07:31] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13592504 found in live site
+[2024-06-11 15:07:31] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 71 of 100 and batch 1 of 785
+[2024-06-11 15:07:32] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13610298
+[2024-06-11 15:07:33] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13610298 found in live site
+[2024-06-11 15:07:33] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 70 of 100 and batch 1 of 785
+[2024-06-11 15:07:34] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13650255
+[2024-06-11 15:07:34] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13650255 found in live site
+[2024-06-11 15:07:34] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 69 of 100 and batch 1 of 785
+[2024-06-11 15:07:36] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13615221
+[2024-06-11 15:07:36] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13615221 found in live site
+[2024-06-11 15:07:36] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 68 of 100 and batch 1 of 785
+[2024-06-11 15:07:38] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13712755
+[2024-06-11 15:07:38] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13712755 found in live site
+[2024-06-11 15:07:38] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 67 of 100 and batch 1 of 785
+[2024-06-11 15:07:40] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13646050
+[2024-06-11 15:07:40] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13646050 found in live site
+[2024-06-11 15:07:40] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 66 of 100 and batch 1 of 785
+[2024-06-11 15:07:42] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648416
+[2024-06-11 15:07:42] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648416 found in live site
+[2024-06-11 15:07:42] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 65 of 100 and batch 1 of 785
+[2024-06-11 15:07:44] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13597369
+[2024-06-11 15:07:44] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13597369 found in live site
+[2024-06-11 15:07:44] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 64 of 100 and batch 1 of 785
+[2024-06-11 15:07:46] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648169
+[2024-06-11 15:07:46] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648169 found in live site
+[2024-06-11 15:07:46] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 63 of 100 and batch 1 of 785
+[2024-06-11 15:07:47] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13595813
+[2024-06-11 15:07:48] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13595813 found in live site
+[2024-06-11 15:07:48] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 62 of 100 and batch 1 of 785
+[2024-06-11 15:07:50] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13595010
+[2024-06-11 15:07:50] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13595010 found in live site
+[2024-06-11 15:07:50] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 61 of 100 and batch 1 of 785
+[2024-06-11 15:07:51] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13694363
+[2024-06-11 15:07:52] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13694363 found in live site
+[2024-06-11 15:07:52] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 60 of 100 and batch 1 of 785
+[2024-06-11 15:07:53] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13616096
+[2024-06-11 15:07:54] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13616096 found in live site
+[2024-06-11 15:07:54] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 59 of 100 and batch 1 of 785
+[2024-06-11 15:07:55] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13642822
+[2024-06-11 15:07:55] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13642822 found in live site
+[2024-06-11 15:07:55] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 58 of 100 and batch 1 of 785
+[2024-06-11 15:07:57] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13644801
+[2024-06-11 15:07:57] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13644801 found in live site
+[2024-06-11 15:07:57] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 57 of 100 and batch 1 of 785
+[2024-06-11 15:07:59] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13629735
+[2024-06-11 15:08:00] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13629735 found in live site
+[2024-06-11 15:08:00] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 56 of 100 and batch 1 of 785
+[2024-06-11 15:08:01] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13637166
+[2024-06-11 15:08:02] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13637166 found in live site
+[2024-06-11 15:08:02] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 55 of 100 and batch 1 of 785
+[2024-06-11 15:08:03] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648977
+[2024-06-11 15:08:04] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648977 found in live site
+[2024-06-11 15:08:04] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 54 of 100 and batch 1 of 785
+[2024-06-11 15:08:05] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13655952
+[2024-06-11 15:08:06] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13655952 found in live site
+[2024-06-11 15:08:06] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 53 of 100 and batch 1 of 785
+[2024-06-11 15:08:07] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13627243
+[2024-06-11 15:08:07] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13627243 found in live site
+[2024-06-11 15:08:07] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 52 of 100 and batch 1 of 785
+[2024-06-11 15:08:09] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13619301
+[2024-06-11 15:08:09] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13619301 found in live site
+[2024-06-11 15:08:09] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 51 of 100 and batch 1 of 785
+[2024-06-11 15:08:11] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13642102
+[2024-06-11 15:08:11] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13642102 found in live site
+[2024-06-11 15:08:11] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 50 of 100 and batch 1 of 785
+[2024-06-11 15:08:13] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13644847
+[2024-06-11 15:08:13] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13644847 found in live site
+[2024-06-11 15:08:13] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 49 of 100 and batch 1 of 785
+[2024-06-11 15:08:15] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13650137
+[2024-06-11 15:08:15] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13650137 found in live site
+[2024-06-11 15:08:15] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 48 of 100 and batch 1 of 785
+[2024-06-11 15:08:17] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13650023
+[2024-06-11 15:08:17] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13650023 found in live site
+[2024-06-11 15:08:17] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 47 of 100 and batch 1 of 785
+[2024-06-11 15:08:19] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13644843
+[2024-06-11 15:08:19] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13644843 found in live site
+[2024-06-11 15:08:19] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 46 of 100 and batch 1 of 785
+[2024-06-11 15:08:21] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13633001
+[2024-06-11 15:08:21] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13633001 found in live site
+[2024-06-11 15:08:21] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 45 of 100 and batch 1 of 785
+[2024-06-11 15:08:22] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13618544
+[2024-06-11 15:08:23] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13618544 found in live site
+[2024-06-11 15:08:23] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 44 of 100 and batch 1 of 785
+[2024-06-11 15:08:24] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13626695
+[2024-06-11 15:08:25] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13626695 found in live site
+[2024-06-11 15:08:25] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 43 of 100 and batch 1 of 785
+[2024-06-11 15:08:26] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13645996
+[2024-06-11 15:08:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13645996 found in live site
+[2024-06-11 15:08:27] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 42 of 100 and batch 1 of 785
+[2024-06-11 15:08:28] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13649029
+[2024-06-11 15:08:29] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13649029 found in live site
+[2024-06-11 15:08:29] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 41 of 100 and batch 1 of 785
+[2024-06-11 15:08:30] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13602646
+[2024-06-11 15:08:31] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13602646 found in live site
+[2024-06-11 15:08:31] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 40 of 100 and batch 1 of 785
+[2024-06-11 15:08:32] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13740952
+[2024-06-11 15:08:32] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13740952 found in live site
+[2024-06-11 15:08:32] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 39 of 100 and batch 1 of 785
+[2024-06-11 15:08:34] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13646281
+[2024-06-11 15:08:34] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13646281 found in live site
+[2024-06-11 15:08:34] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 38 of 100 and batch 1 of 785
+[2024-06-11 15:08:36] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13590594
+[2024-06-11 15:08:36] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13590594 found in live site
+[2024-06-11 15:08:36] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 37 of 100 and batch 1 of 785
+[2024-06-11 15:08:38] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13649267
+[2024-06-11 15:08:38] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13649267 found in live site
+[2024-06-11 15:08:38] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 36 of 100 and batch 1 of 785
+[2024-06-11 15:08:40] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13728191
+[2024-06-11 15:08:40] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13728191 found in live site
+[2024-06-11 15:08:40] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 35 of 100 and batch 1 of 785
+[2024-06-11 15:08:42] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13640769
+[2024-06-11 15:08:42] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13640769 found in live site
+[2024-06-11 15:08:42] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 34 of 100 and batch 1 of 785
+[2024-06-11 15:08:44] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648822
+[2024-06-11 15:08:44] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648822 found in live site
+[2024-06-11 15:08:44] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 33 of 100 and batch 1 of 785
+[2024-06-11 15:08:45] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13646576
+[2024-06-11 15:08:46] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13646576 found in live site
+[2024-06-11 15:08:46] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 32 of 100 and batch 1 of 785
+[2024-06-11 15:08:48] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13631673
+[2024-06-11 15:08:48] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13631673 found in live site
+[2024-06-11 15:08:48] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 31 of 100 and batch 1 of 785
+[2024-06-11 15:08:50] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13595021
+[2024-06-11 15:08:50] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13595021 found in live site
+[2024-06-11 15:08:50] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 30 of 100 and batch 1 of 785
+[2024-06-11 15:08:51] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13616886
+[2024-06-11 15:08:52] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13616886 found in live site
+[2024-06-11 15:08:52] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 29 of 100 and batch 1 of 785
+[2024-06-11 15:08:53] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13712242
+[2024-06-11 15:08:54] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13712242 found in live site
+[2024-06-11 15:08:54] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 28 of 100 and batch 1 of 785
+[2024-06-11 15:08:55] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13609431
+[2024-06-11 15:08:56] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13609431 found in live site
+[2024-06-11 15:08:56] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 27 of 100 and batch 1 of 785
+[2024-06-11 15:08:57] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13636289
+[2024-06-11 15:08:58] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13636289 found in live site
+[2024-06-11 15:08:58] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 26 of 100 and batch 1 of 785
+[2024-06-11 15:08:59] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13637954
+[2024-06-11 15:09:00] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13637954 found in live site
+[2024-06-11 15:09:00] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 25 of 100 and batch 1 of 785
+[2024-06-11 15:09:01] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13641421
+[2024-06-11 15:09:02] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13641421 found in live site
+[2024-06-11 15:09:02] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 24 of 100 and batch 1 of 785
+[2024-06-11 15:09:03] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13605738
+[2024-06-11 15:09:04] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13605738 found in live site
+[2024-06-11 15:09:04] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 23 of 100 and batch 1 of 785
+[2024-06-11 15:09:05] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13617992
+[2024-06-11 15:09:06] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13617992 found in live site
+[2024-06-11 15:09:06] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 22 of 100 and batch 1 of 785
+[2024-06-11 15:09:07] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13615855
+[2024-06-11 15:09:07] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13615855 found in live site
+[2024-06-11 15:09:07] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 21 of 100 and batch 1 of 785
+[2024-06-11 15:09:09] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13616838
+[2024-06-11 15:09:09] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13616838 found in live site
+[2024-06-11 15:09:09] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 20 of 100 and batch 1 of 785
+[2024-06-11 15:09:11] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13644749
+[2024-06-11 15:09:11] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13644749 found in live site
+[2024-06-11 15:09:11] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 19 of 100 and batch 1 of 785
+[2024-06-11 15:09:13] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13656953
+[2024-06-11 15:09:13] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13656953 found in live site
+[2024-06-11 15:09:13] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 18 of 100 and batch 1 of 785
+[2024-06-11 15:09:15] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13649777
+[2024-06-11 15:09:16] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13649777 found in live site
+[2024-06-11 15:09:16] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 17 of 100 and batch 1 of 785
+[2024-06-11 15:09:17] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648993
+[2024-06-11 15:09:18] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648993 found in live site
+[2024-06-11 15:09:18] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 16 of 100 and batch 1 of 785
+[2024-06-11 15:09:19] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13613455
+[2024-06-11 15:09:19] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13613455 found in live site
+[2024-06-11 15:09:19] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 15 of 100 and batch 1 of 785
+[2024-06-11 15:09:21] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13643696
+[2024-06-11 15:09:22] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13643696 found in live site
+[2024-06-11 15:09:22] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 14 of 100 and batch 1 of 785
+[2024-06-11 15:09:23] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13643922
+[2024-06-11 15:09:23] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13643922 found in live site
+[2024-06-11 15:09:23] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 13 of 100 and batch 1 of 785
+[2024-06-11 15:09:25] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13633387
+[2024-06-11 15:09:25] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13633387 found in live site
+[2024-06-11 15:09:25] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 12 of 100 and batch 1 of 785
+[2024-06-11 15:09:27] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13631111
+[2024-06-11 15:09:27] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13631111 found in live site
+[2024-06-11 15:09:27] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 11 of 100 and batch 1 of 785
+[2024-06-11 15:09:29] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13609621
+[2024-06-11 15:09:29] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13609621 found in live site
+[2024-06-11 15:09:29] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 10 of 100 and batch 1 of 785
+[2024-06-11 15:09:31] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13622989
+[2024-06-11 15:09:31] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13622989 found in live site
+[2024-06-11 15:09:31] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 9 of 100 and batch 1 of 785
+[2024-06-11 15:09:33] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13621016
+[2024-06-11 15:09:34] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13621016 found in live site
+[2024-06-11 15:09:34] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 8 of 100 and batch 1 of 785
+[2024-06-11 15:09:35] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13629291
+[2024-06-11 15:09:36] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13629291 found in live site
+[2024-06-11 15:09:36] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 7 of 100 and batch 1 of 785
+[2024-06-11 15:09:37] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13648500
+[2024-06-11 15:09:38] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13648500 found in live site
+[2024-06-11 15:09:38] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 6 of 100 and batch 1 of 785
+[2024-06-11 15:09:39] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13604084
+[2024-06-11 15:09:39] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13604084 found in live site
+[2024-06-11 15:09:39] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 5 of 100 and batch 1 of 785
+[2024-06-11 15:09:41] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13695529
+[2024-06-11 15:09:41] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13695529 found in live site
+[2024-06-11 15:09:41] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 4 of 100 and batch 1 of 785
+[2024-06-11 15:09:43] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13630311
+[2024-06-11 15:09:43] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13630311 found in live site
+[2024-06-11 15:09:43] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 3 of 100 and batch 1 of 785
+[2024-06-11 15:09:45] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13644893
+[2024-06-11 15:09:45] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13644893 found in live site
+[2024-06-11 15:09:45] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 2 of 100 and batch 1 of 785
+[2024-06-11 15:09:47] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13620528
+[2024-06-11 15:09:47] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13620528 found in live site
+[2024-06-11 15:09:47] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 1 of 100 and batch 1 of 785
+[2024-06-11 15:09:49] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13646680
+[2024-06-11 15:09:49] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13646680 found in live site
+[2024-06-11 15:09:49] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 0 of 100 and batch 1 of 785
+[2024-06-11 15:09:49] [INFO] VehicleSoldUpdateService.updateVehicleSoldStatus:58 - Processing batch no 2 of 785 found 100 vehicles
+[2024-06-11 15:09:51] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13658511
+[2024-06-11 15:09:51] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13658511 found in live site
+[2024-06-11 15:09:51] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 99 of 100 and batch 2 of 785
+[2024-06-11 15:09:53] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13600744
+[2024-06-11 15:09:53] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13600744 found in live site
+[2024-06-11 15:09:53] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 98 of 100 and batch 2 of 785
+[2024-06-11 15:09:55] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13721492
+[2024-06-11 15:09:55] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13721492 found in live site
+[2024-06-11 15:09:55] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 97 of 100 and batch 2 of 785
+[2024-06-11 15:09:57] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13635836
+[2024-06-11 15:09:57] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13635836 found in live site
+[2024-06-11 15:09:57] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 96 of 100 and batch 2 of 785
+[2024-06-11 15:09:58] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13725986
+[2024-06-11 15:09:59] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13725986 found in live site
+[2024-06-11 15:09:59] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 95 of 100 and batch 2 of 785
+[2024-06-11 15:10:00] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13649071
+[2024-06-11 15:10:01] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13649071 found in live site
+[2024-06-11 15:10:01] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 94 of 100 and batch 2 of 785
+[2024-06-11 15:10:02] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13622729
+[2024-06-11 15:10:03] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13622729 found in live site
+[2024-06-11 15:10:03] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 93 of 100 and batch 2 of 785
+[2024-06-11 15:10:04] [ERROR] VehicleSoldUpdateService.updateVehicles:108 - Error while updating sold status for vehicle 13639046: sleep interrupted
+[2024-06-11 15:10:04] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 92 of 100 and batch 2 of 785
+[2024-06-11 15:10:05] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13639478
+[2024-06-11 15:10:06] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13639478 found in live site
+[2024-06-11 15:10:06] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 91 of 100 and batch 2 of 785
+[2024-06-11 15:10:07] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13628713
+[2024-06-11 15:10:08] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13628713 found in live site
+[2024-06-11 15:10:08] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 90 of 100 and batch 2 of 785
+[2024-06-11 15:10:09] [INFO] LocalContainerEntityManagerFactoryBean.destroy:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-06-11 15:10:09] [INFO] HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+[2024-06-11 15:10:09] [INFO] HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+[2024-06-11 15:10:09] [INFO] VehicleSoldUpdateService.updateVehicles:88 - url: https://listings.platform.autotrader.com.au/api/v3/listings/13722080
+[2024-06-11 15:10:10] [INFO] VehicleSoldUpdateService.lambda$updateVehicleDeletedAt$1:136 - Vehicle 13722080 found in live site
+[2024-06-11 15:10:10] [INFO] VehicleSoldUpdateService.updateVehicles:111 - Remaining 89 of 100 and batch 2 of 785

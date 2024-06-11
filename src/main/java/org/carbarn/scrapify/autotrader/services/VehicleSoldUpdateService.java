@@ -61,7 +61,7 @@ public class VehicleSoldUpdateService {
             updateVehicles(vehicles);
 
             pageable = vehiclePage.nextPageable();
-            batchNumber++;
+
         } while (vehiclePage.hasNext());
     }
 
@@ -110,6 +110,7 @@ public class VehicleSoldUpdateService {
             count -= 1;
             log.info("Remaining {} of {} and batch {} of {}", count, vehicles.size(), batchNumber, totalPages);
         }
+        batchNumber++;
     }
 
     private void markVehicleAsSold(AutotraderCarListing vehicle) {
