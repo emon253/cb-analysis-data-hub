@@ -6,6 +6,9 @@ import org.carbarn.scrapify.autotrader.dto.response.AutotraderApiResponse;
 import org.carbarn.scrapify.autotrader.repositories.AutotraderVehicleRepository;
 import org.carbarn.scrapify.consts.ConstData;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,7 @@ public class VehicleSoldUpdateService {
     private String individualProductAPIUrl;
     @Value("${scraping.interval.autotrader}")
     private Long interval;
+
     public VehicleSoldUpdateService(AutotraderVehicleRepository vehicleRepository, RestTemplate restTemplate, DataProcessor dataProcessor) {
         this.vehicleRepository = vehicleRepository;
         this.restTemplate = restTemplate;
@@ -37,21 +41,37 @@ public class VehicleSoldUpdateService {
 
     }
 
-    public void updateVehicleSoldStatus() {
-        List<AutotraderCarListing> vehicles = vehicleRepository.findByStatus("Live");
-        log.info("{} vehicles found to process for update", vehicles.size());
+    int batchSize = 100;
+    int batchNumber = 1;
+    int totalPages = 0;
 
-        updateVehicles(vehicles);
+    public void updateVehicleSoldStatus() {
+
+        Pageable pageable = PageRequest.of(0, batchSize);
+        Page<AutotraderCarListing> vehiclePage;
+
+
+        do {
+            vehiclePage = vehicleRepository.findByStatus("Live", pageable);
+            totalPages = vehiclePage.getTotalPages();
+            List<AutotraderCarListing> vehicles = vehiclePage.getContent();
+            log.info("Processing batch no {} of {} found {} vehicles", batchNumber, totalPages, vehicles.size());
+
+
+            updateVehicles(vehicles);
+
+            pageable = vehiclePage.nextPageable();
+            batchNumber++;
+        } while (vehiclePage.hasNext());
     }
+
 
     public void updateDealerWiseVehicleSoldStatus(List<Long> dealers) {
         List<AutotraderCarListing> vehicles = new ArrayList<>();
-
         List<Boolean> collect = dealers.stream()
                 .map(vehicleRepository::getAllVehicleByAutoTraderDealerId)
                 .map(vehicles::addAll)
                 .toList();
-        log.info("{} vehicles found to process for update", vehicles.size());
         if (!collect.isEmpty()) {
             updateVehicles(vehicles);
         }
@@ -64,9 +84,8 @@ public class VehicleSoldUpdateService {
             String apiUrl = individualProductAPIUrl + autoTraderId;
 
             try {
-                log.info("Request for url {}", apiUrl);
-//                Thread.sleep(interval);
-
+                Thread.sleep(1500);
+                log.info("url: {}", apiUrl);
                 ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
                 AutotraderApiResponse autotraderApiResponse = dataProcessor.processResponseForObject(response.getBody());
 
@@ -82,15 +101,20 @@ public class VehicleSoldUpdateService {
                 markVehicleAsSold(vehicle);
             } catch (HttpClientErrorException e) {
                 log.error("HTTP Error while updating sold status for vehicle {}: {}", autoTraderId, e.getMessage());
+                if (e.getMessage().contains("Listing not found")) {
+                    markVehicleAsSold(vehicle);
+                }
             } catch (Exception e) {
                 log.error("Error while updating sold status for vehicle {}: {}", autoTraderId, e.getMessage());
             }
-            count-=1;
-            log.info("Remaining {} of {} ",count, vehicles.size());
+            count -= 1;
+            log.info("Remaining {} of {} and batch {} of {}", count, vehicles.size(), batchNumber, totalPages);
         }
     }
 
     private void markVehicleAsSold(AutotraderCarListing vehicle) {
+        log.error("Listing not found in api and marking as sold vehicle {}", vehicle.getAutoTraderId());
+
         vehicle.setStatus("SOLD");
         vehicle.setSoldDate(LocalDate.now().toString());
         vehicleRepository.save(vehicle);
