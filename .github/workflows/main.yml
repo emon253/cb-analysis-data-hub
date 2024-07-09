@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: spring-boot-app
-          path: target/*.jar
+          path: target/*.war
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          source: "spring-boot-app.jar"
+          source: "spring-boot-app.war"
           target: "D:/app_data_collection/scrapify"
 
       - name: Execute SSH command
@@ -62,4 +62,4 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd D:/app_data_collection/scrapify
-            java -jar spring-boot-app.jar
+            java -jar spring-boot-app.war
