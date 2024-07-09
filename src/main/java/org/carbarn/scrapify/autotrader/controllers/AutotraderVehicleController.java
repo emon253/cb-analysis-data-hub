@@ -4,12 +4,19 @@ import org.carbarn.scrapify.autotrader.domain.AutotraderCarListing;
 import org.carbarn.scrapify.autotrader.dto.ProductFilterCriteria;
 import org.carbarn.scrapify.autotrader.dto.response.AutotraderDataAndSummary;
 import org.carbarn.scrapify.autotrader.services.AutotraderVehicleService;
+import org.carbarn.scrapify.autotrader.services.export.ExportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.File;
+import java.io.IOException;
 
 @CrossOrigin(originPatterns = "*",allowCredentials = "false")
 @RestController
@@ -66,5 +73,27 @@ public class AutotraderVehicleController {
     public ResponseEntity<AutotraderDataAndSummary> getVehiclesFilterBy(ProductFilterCriteria criteria, @PageableDefault(size = 15) Pageable pageable ){
         AutotraderDataAndSummary vehicles = vehicleService.getFilteredVehiclesWithSummary(criteria, pageable);
         return ResponseEntity.ok(vehicles);
+    }
+
+    @Autowired
+    private ExportService exportService;
+
+    @GetMapping("/export/csv")
+    public ResponseEntity<FileSystemResource> exportDataToCSV() {
+        String filePath = "car_listings.csv";
+        try {
+            exportService.exportDataToCSV(filePath);
+
+            File file = new File(filePath);
+            FileSystemResource fileSystemResource = new FileSystemResource(file);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=car_listings.csv");
+            headers.add(HttpHeaders.CONTENT_TYPE, "text/csv");
+
+            return new ResponseEntity<>(fileSystemResource, headers, HttpStatus.OK);
+        } catch (IOException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
