@@ -56,10 +56,12 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            echo "SSH connection test successful" || { echo "Key-based authentication failed, trying password authentication" && exit 1; }
+            echo "Testing SSH connection..."
+            ssh -i ${{ secrets.EC2_KEY }} ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo SSH connection test successful"
+          continue-on-error: true
 
       - name: Copy files via SSH with key
-        if: success()
+        if: steps.ssh_test.outcome == 'success'
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -70,7 +72,7 @@ jobs:
         continue-on-error: true
 
       - name: Copy files via SSH with password
-        if: failure()
+        if: steps.ssh_test.outcome == 'failure'
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -80,7 +82,7 @@ jobs:
           target: "H:/carbarn"
 
       - name: Execute SSH command with key
-        if: success()
+        if: steps.ssh_test.outcome == 'success'
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -92,7 +94,7 @@ jobs:
         continue-on-error: true
 
       - name: Execute SSH command with password
-        if: failure()
+        if: steps.ssh_test.outcome == 'failure'
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
