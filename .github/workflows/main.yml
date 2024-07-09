@@ -49,22 +49,24 @@ jobs:
         run: mv Scrapify-1.war downloaded-app.war
 
       - name: Test SSH connection
+        id: ssh_test
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            echo "SSH connection test successful" || echo "Key-based authentication failed, trying password authentication" && exit 1
+            echo "SSH connection test successful" || { echo "Key-based authentication failed, trying password authentication" && exit 1; }
 
       - name: Copy files via SSH with key
+        if: success()
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           source: "downloaded-app.war"
-          target: "H:\carbarn"
+          target: "H:/carbarn"
         continue-on-error: true
 
       - name: Copy files via SSH with password
@@ -75,16 +77,17 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           password: ${{ secrets.EC2_PASSWORD }}
           source: "downloaded-app.war"
-          target: "H:\carbarn"
+          target: "H:/carbarn"
 
       - name: Execute SSH command with key
+        if: success()
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            cd H:\carbarn
+            cd H:/carbarn
             java -jar downloaded-app.war
         continue-on-error: true
 
@@ -96,5 +99,5 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           password: ${{ secrets.EC2_PASSWORD }}
           script: |
-            cd H:\carbarn
+            cd H:/carbarn
             java -jar downloaded-app.war
