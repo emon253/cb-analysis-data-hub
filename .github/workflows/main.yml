@@ -48,6 +48,9 @@ jobs:
       - name: Move artifact for scp
         run: mv Scrapify-1.war downloaded-app.war
 
+      - name: Print SSH key
+        run: echo "${{ secrets.EC2_KEY }}"
+
       - name: Test SSH connection
         id: ssh_test
         uses: appleboy/ssh-action@v0.1.3
@@ -55,13 +58,11 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          script: |
-            echo "Testing SSH connection..."
-            ssh -i ${{ secrets.EC2_KEY }} ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo SSH connection test successful"
-          continue-on-error: true
+          script: echo "Testing SSH connection..." && ssh -i ${{ secrets.EC2_KEY }} ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo SSH connection test successful"
+        continue-on-error: true
 
       - name: Copy files via SSH with key
-        if: steps.ssh_test.outcome == 'success'
+        if: always()
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -72,7 +73,7 @@ jobs:
         continue-on-error: true
 
       - name: Copy files via SSH with password
-        if: steps.ssh_test.outcome == 'failure'
+        if: failure()
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -82,7 +83,7 @@ jobs:
           target: "H:/carbarn"
 
       - name: Execute SSH command with key
-        if: steps.ssh_test.outcome == 'success'
+        if: always()
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -94,7 +95,7 @@ jobs:
         continue-on-error: true
 
       - name: Execute SSH command with password
-        if: steps.ssh_test.outcome == 'failure'
+        if: failure()
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.EC2_HOST }}
