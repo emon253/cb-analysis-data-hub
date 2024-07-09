@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: spring-boot-app
-          path: target/*.war # Adjust this path if necessary to match the generated file name
+          path: target/*.war # Adjusted to upload .war file
 
   deploy:
     runs-on: ubuntu-latest
