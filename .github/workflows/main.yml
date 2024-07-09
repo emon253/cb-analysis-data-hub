@@ -64,7 +64,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           source: "downloaded-app.war"
-          target: "D:/app_data_collection/scrapify"
+          target: "H:\carbarn"
         continue-on-error: true
 
       - name: Copy files via SSH with password
@@ -75,7 +75,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           password: ${{ secrets.EC2_PASSWORD }}
           source: "downloaded-app.war"
-          target: "D:/app_data_collection/scrapify"
+          target: "H:\carbarn"
 
       - name: Execute SSH command with key
         uses: appleboy/ssh-action@v0.1.3
@@ -84,7 +84,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            cd D:/app_data_collection/scrapify
+            cd H:\carbarn
             java -jar downloaded-app.war
         continue-on-error: true
 
@@ -96,5 +96,5 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           password: ${{ secrets.EC2_PASSWORD }}
           script: |
-            cd D:/app_data_collection/scrapify
+            cd H:\carbarn
             java -jar downloaded-app.war
