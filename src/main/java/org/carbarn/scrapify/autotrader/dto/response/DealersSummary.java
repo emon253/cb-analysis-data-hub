@@ -2,9 +2,11 @@ package org.carbarn.scrapify.autotrader.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class DealersSummary {
     private Long dealerId;
     private String state;

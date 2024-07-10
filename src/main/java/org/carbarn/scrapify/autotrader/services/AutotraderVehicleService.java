@@ -6,6 +6,7 @@ import org.carbarn.scrapify.autotrader.domain.AutotraderCarListing;
 import org.carbarn.scrapify.autotrader.domain.AutotraderDealer;
 import org.carbarn.scrapify.autotrader.dto.ProductFilterCriteria;
 import org.carbarn.scrapify.autotrader.dto.response.AutotraderDataAndSummary;
+import org.carbarn.scrapify.autotrader.dto.response.DealersSummary;
 import org.carbarn.scrapify.autotrader.repositories.AutotraderDealerRepository;
 import org.carbarn.scrapify.autotrader.repositories.AutotraderVehicleRepository;
 import org.carbarn.scrapify.consts.ConstData;
@@ -23,10 +24,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -76,14 +74,24 @@ public class AutotraderVehicleService {
     @Transactional(readOnly = true)
     public AutotraderDataAndSummary getFilteredVehiclesWithSummary(ProductFilterCriteria criteria, Pageable pageable) {
         Page<AutotraderCarListing> vehicles = repository.findAll(matchesCriteria(criteria), pageable);
+        AutotraderDataAndSummary response = new AutotraderDataAndSummary();
 
         // Calculate live and sold counts using the same criteria but specific for status
         Long liveCount = repository.count(matchesCriteriaWithStatus(criteria, "LIVE"));
+
         Long soldCount = repository.count(matchesCriteriaWithStatus(criteria, "SOLD"));
 
-        AutotraderDataAndSummary response = new AutotraderDataAndSummary();
+        if (criteria.getDealerId() != null) {
+            Page<DealersSummary> dealerSalesSummary = repository.getDealerSalesSummary(criteria.getMinListingDate(), criteria.getMaxListingDate(), criteria.getDealerId(), criteria.getVinPrefix(), pageable);
+            if(!dealerSalesSummary.getContent().isEmpty()) {
+                response.setDealersSummary(dealerSalesSummary.getContent().get(0));
+            }
+        }
+
         response.setVehicles(vehicles);
+
         response.setLive(liveCount);
+
         response.setSold(soldCount);
 
         return response;

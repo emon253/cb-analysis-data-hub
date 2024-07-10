@@ -49,8 +49,7 @@ public class ScraperStatusService {
         try {
             Document doc = Jsoup.connect(url).get();
             Elements scriptElements = doc.getElementsByTag("script");
-            System.out.println(scriptElements);
-            System.out.println(url);
+
             for (Element element : scriptElements) {
                 String scriptText = element.data();
                 if (scriptText.contains("dataLayer.push(")) {

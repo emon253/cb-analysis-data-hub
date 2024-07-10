@@ -52,13 +52,31 @@ public interface AutotraderVehicleRepository extends JpaRepository<AutotraderCar
 //            "AND (:dealerId IS NULL OR dealer.autoTraderDealerId = :dealerId) " +
 //            "GROUP BY dealer.autoTraderDealerId, dealer.state,dealer.tradingName ")
 //    Page<DealersSummary> getDealerSalesSummary(@Param("startDate") String startDate, @Param("endDate") String endDate, @Param("dealerId") Long dealerId, Pageable pageable);
+//    @Query("SELECT new org.carbarn.scrapify.autotrader.dto.response.DealersSummary(dealer.autoTraderDealerId, dealer.state, dealer.tradingName, " +
+//            "COUNT(CASE WHEN listing.status = 'SOLD' THEN 1 END) AS soldQty, " +
+//            "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId AND dl.status = 'Live' AND (dl.createdAt BETWEEN :startDate AND :endDate) AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS totalListings, " +
+//            "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId AND dl.status = 'Live' AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS currentLiveStock) " +
+//            "FROM AutotraderCarListing listing " +
+//            "JOIN listing.dealer dealer " +
+//            "WHERE listing.status = 'SOLD' AND (listing.soldDate BETWEEN :startDate AND :endDate) " +
+//            "AND (:dealerId IS NULL OR dealer.autoTraderDealerId = :dealerId) " +
+//            "AND (:vinPrefix IS NULL OR listing.vin LIKE CONCAT(:vinPrefix, '%')) " +
+//            "GROUP BY dealer.autoTraderDealerId, dealer.state, dealer.tradingName")
+//    Page<DealersSummary> getDealerSalesSummary(
+//            @Param("startDate") String startDate,
+//            @Param("endDate") String endDate,
+//            @Param("dealerId") Long dealerId,
+//            @Param("vinPrefix") String vinPrefix,
+//            Pageable pageable);
+
+
     @Query("SELECT new org.carbarn.scrapify.autotrader.dto.response.DealersSummary(dealer.autoTraderDealerId, dealer.state, dealer.tradingName, " +
             "COUNT(CASE WHEN listing.status = 'SOLD' THEN 1 END) AS soldQty, " +
             "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId AND dl.status = 'Live' AND (dl.createdAt BETWEEN :startDate AND :endDate) AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS totalListings, " +
             "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId AND dl.status = 'Live' AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS currentLiveStock) " +
             "FROM AutotraderCarListing listing " +
             "JOIN listing.dealer dealer " +
-            "WHERE listing.status = 'SOLD' AND (listing.soldDate BETWEEN :startDate AND :endDate) " +
+            "WHERE (:startDate IS NULL OR :endDate IS NULL OR listing.soldDate BETWEEN :startDate AND :endDate) " +
             "AND (:dealerId IS NULL OR dealer.autoTraderDealerId = :dealerId) " +
             "AND (:vinPrefix IS NULL OR listing.vin LIKE CONCAT(:vinPrefix, '%')) " +
             "GROUP BY dealer.autoTraderDealerId, dealer.state, dealer.tradingName")

@@ -31,7 +31,7 @@ public class VehicleSoldUpdateService {
 
     @Value("${autotrader.individual_product_api_url}")
     private String individualProductAPIUrl;
-    @Value("${scraping.interval.autotrader}")
+    @Value("${scraping.interval.autotrader.sold}")
     private Long interval;
 
     public VehicleSoldUpdateService(AutotraderVehicleRepository vehicleRepository, RestTemplate restTemplate, DataProcessor dataProcessor) {
@@ -84,7 +84,7 @@ public class VehicleSoldUpdateService {
             String apiUrl = individualProductAPIUrl + autoTraderId;
 
             try {
-                Thread.sleep(1500);
+                Thread.sleep(interval);
                 log.info("url: {}", apiUrl);
                 ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
                 AutotraderApiResponse autotraderApiResponse = dataProcessor.processResponseForObject(response.getBody());

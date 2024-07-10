@@ -9,5 +9,6 @@ public class AutotraderDataAndSummary {
     private Page<AutotraderCarListing> vehicles;
     private Long live;
     private Long sold;
+    private DealersSummary dealersSummary;
 
 }
