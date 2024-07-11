@@ -76,6 +76,7 @@ public class ScrapperController {
                     .collect(Collectors.toList());
 
             scraperService.startScraperForDearWiseData(dealerIds);
+            soldUpdateService.updateDealerWiseVehicleSoldStatus(dealerIds);
             return ResponseEntity.ok("Scraping completed.");
         } catch (NumberFormatException e) {
             return ResponseEntity.badRequest().body("Dealers parameter must contain a comma-separated list of numbers.");
@@ -136,5 +137,14 @@ public class ScrapperController {
     @GetMapping("/update-sold-dealerWise")
     public void updateDealerWiseVehicles() {
         soldUpdateService.updateDealerWiseVehicleSoldStatus(ConstData.getDealers());
+    }
+
+    @GetMapping("/update-sold-individual")
+    public void updateIndividualVehicles(@RequestParam(required = false) String dealers) {
+        List<Long> dealerIds = Arrays.stream(dealers.split(","))
+                .map(String::trim)
+                .map(Long::parseLong)
+                .collect(Collectors.toList());
+        soldUpdateService.updateDealerWiseVehicleSoldStatus(dealerIds);
     }
 }

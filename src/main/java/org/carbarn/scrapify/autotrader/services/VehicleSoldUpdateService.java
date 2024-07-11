@@ -134,6 +134,10 @@ public class VehicleSoldUpdateService {
                 }, () -> {
                     assert autotraderApiResponse != null;
                     log.info("Vehicle {} found in live site", autotraderApiResponse.getId());
+                    vehicle.setDeletedAt(null);
+                    vehicle.setStatus("Live");
+                    vehicle.setSoldDate(null);
+                    vehicleRepository.save(vehicle);
                 });
     }
 
