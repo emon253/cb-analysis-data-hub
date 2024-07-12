@@ -115,7 +115,17 @@ public class VehicleSoldUpdateService {
 
     private void markVehicleAsSold(AutotraderCarListing vehicle) {
         log.error("Listing not found in api and marking as sold vehicle {}", vehicle.getAutoTraderId());
-
+        Optional.ofNullable(vehicle)
+                .map(AutotraderCarListing::getDeletedAt)
+                .ifPresentOrElse(deletedAt -> {
+                    vehicle.setStatus("SOLD");
+                    vehicle.setSoldDate(deletedAt);
+                    vehicleRepository.save(vehicle);
+                }, () -> {
+                    vehicle.setStatus("Live");
+//                    vehicle.setSoldDate(null);
+                    vehicleRepository.save(vehicle);
+                });
         vehicle.setStatus("SOLD");
         vehicle.setSoldDate(LocalDate.now().toString());
         vehicleRepository.save(vehicle);

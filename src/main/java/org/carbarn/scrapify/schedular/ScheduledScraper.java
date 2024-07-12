@@ -12,6 +12,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Log4j2
 @Component
 @EnableScheduling
@@ -28,33 +30,14 @@ public class ScheduledScraper {
         this.scraperService = scraperService;
     }
 
-    public void scrapeUpdateStatus() {
-        log.info("Updating status started...");
-        soldUpdateService.updateDealerWiseVehicleSoldStatus(ConstData.getDealers());
-        log.info("Updating status ended...");
-
-    }
-
-    //    @Scheduled(cron = "0 * * * * *")
-//    @Scheduled(fixedDelay = 3000)
-    @Scheduled(cron = "0 0 0 * * ?", zone = "Australia/Sydney")
+    @Scheduled(cron = "0 0 0,6,12,18 * * ?", zone = "Australia/Sydney")
     public void scrapeDataDealerWise() throws InterruptedException {
-        log.info("Scraping started...");
-        if (shouldRun(AutotraderScrapperStatus.AUTOTRADER_SCRAPPER_STATUS_GROUP_WISE.name())) {
-            scraperService.startScraperForDearWiseData(ConstData.getDealers());
-        }
-        soldUpdateService.updateDealerWiseVehicleSoldStatus(ConstData.getDealers());
+        List<Long> dealers = ConstData.getDealers();
+        log.info("Updating status started...");
+        scraperService.startScraperForDearWiseData(dealers);
+        log.info("Updating status ended...");
+        soldUpdateService.updateDealerWiseVehicleSoldStatus(dealers);
         log.info("Completed Scraping and sold status update...");
-    }
-
-//    Boolean shouldRun(String name) {
-//        return flagRepository.findByName(name)
-//                .map(Flag::getValue)
-//                .map(status -> status.equals("RUNNING"))
-//                .orElse(false);
-//    }
-    Boolean shouldRun(String name) {
-        return Boolean.TRUE;
     }
 
 

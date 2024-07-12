@@ -131,14 +131,14 @@ public class AutotraderScraperService {
         } catch (HttpClientErrorException.TooManyRequests e) {
             log.warn("Rate limiting error: Too many requests. Waiting before retrying...");
         } catch (Exception e) {
-            log.error("Error fetching data: ", e.getMessage());
+            log.error("Error fetching data: ", e);
             if (e.getMessage().contains("Elasticsearch result window is too large")) {
                 log.info("Page-wise scraping process is complete.");
                 updateLastPageFlag(1);
                 return;
             }
         }
-
+        updateLastPageFlag(1);
         log.info("Page-wise scraping process is complete.");
     }
 
