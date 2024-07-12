@@ -114,21 +114,23 @@ public class VehicleSoldUpdateService {
     }
 
     private void markVehicleAsSold(AutotraderCarListing vehicle) {
-        log.error("Listing not found in api and marking as sold vehicle {}", vehicle.getAutoTraderId());
-        Optional.ofNullable(vehicle)
+        log.info("Listing not found in api {}", vehicle.getAutoTraderId());
+        Optional.of(vehicle)
                 .map(AutotraderCarListing::getDeletedAt)
                 .ifPresentOrElse(deletedAt -> {
+                    log.info("Deleted date found {} marking as sold ",deletedAt);
                     vehicle.setStatus("SOLD");
                     vehicle.setSoldDate(deletedAt);
                     vehicleRepository.save(vehicle);
                 }, () -> {
-                    vehicle.setStatus("Live");
-//                    vehicle.setSoldDate(null);
+                    log.info("Could not track the listing, marking as UNTRACKED_LISTING");
+                    vehicle.setStatus("UNTRACKED_LISTING");
+                    vehicle.setSoldDate(null);
                     vehicleRepository.save(vehicle);
                 });
-        vehicle.setStatus("SOLD");
-        vehicle.setSoldDate(LocalDate.now().toString());
-        vehicleRepository.save(vehicle);
+//        vehicle.setStatus("SOLD");
+//        vehicle.setSoldDate(LocalDate.now().toString());
+//        vehicleRepository.save(vehicle);
     }
 
     private void updateVehicleDeletedAt(AutotraderCarListing vehicle, AutotraderApiResponse autotraderApiResponse) {

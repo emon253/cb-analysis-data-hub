@@ -59,7 +59,7 @@ public class AutotraderScraperService {
             log.info("Initiating scraping for dealer: index: {}, id: {}", i, dealerId);
             boolean hasNextPage = true;
             while (hasNextPage) {
-                String requestUrl = baseUrl + "?page=" + currentPage + "&dealer_id=" + dealerId + "&ipLookup=1&sorting_variation=smart_sort_2&paginate=13";
+                String requestUrl = baseUrl + "?page=" + currentPage + "&dealer_id=" + dealerId + "&ipLookup=1&sorting_variation=smart_sort_2&paginate=26";
                 Thread.sleep(interval);
 
                 try {
@@ -107,7 +107,7 @@ public class AutotraderScraperService {
         try {
             while (hasNextPage) {
 
-                String requestUrl = baseUrl + "?page=" + currentPage;
+                String requestUrl = baseUrl + "?page=" + currentPage + "&ipLookup=1&sorting_variation=smart_sort_2&paginate=26";
                 log.info("Requesting page number {} from URL: {}", currentPage, requestUrl);
                 Thread.sleep(interval);
 
