@@ -83,8 +83,11 @@ public class AutotraderVehicleService {
 
         if (criteria.getDealerId() != null) {
             Page<DealersSummary> dealerSalesSummary = repository.getDealerSalesSummary(criteria.getMinListingDate(), criteria.getMaxListingDate(), criteria.getDealerId(), criteria.getVinPrefix(), pageable);
+
             if(!dealerSalesSummary.getContent().isEmpty()) {
                 response.setDealersSummary(dealerSalesSummary.getContent().get(0));
+            }else{
+                response.setDealersSummary(new DealersSummary(0L, 0L, 0L));
             }
         }
 

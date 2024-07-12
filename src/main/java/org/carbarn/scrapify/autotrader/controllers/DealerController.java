@@ -2,9 +2,8 @@ package org.carbarn.scrapify.autotrader.controllers;
 
 import org.carbarn.scrapify.autotrader.domain.AutotraderDealer;
 import org.carbarn.scrapify.autotrader.services.DealerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +19,12 @@ public class DealerController {
     @GetMapping("/autotrader")
     public List<AutotraderDealer> getAllDealersInformaton() {
         return dealerService.getAllDealersInformaton();
+    }
+
+    @PatchMapping("/update")
+    public ResponseEntity<AutotraderDealer> updateDealer(
+            @RequestBody AutotraderDealer dealer) {
+        AutotraderDealer updatedDealer = dealerService.updateDealer(dealer);
+        return ResponseEntity.ok(updatedDealer);
     }
 }

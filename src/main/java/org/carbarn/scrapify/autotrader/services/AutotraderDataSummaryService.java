@@ -18,7 +18,7 @@ public class AutotraderDataSummaryService {
         this.vehicleRepository = vehicleRepository;
     }
     public Page<DealersSummary> getDealerSalesSummary(String startDate, String endDate, Long dealerId,String vin, Pageable pageable) {
-        return vehicleRepository.getDealerSalesSummary(startDate, endDate, dealerId,vin, pageable);
+        return vehicleRepository.getDealerSalesSummary(startDate, endDate, dealerId, vin, pageable);
     }
 
 }

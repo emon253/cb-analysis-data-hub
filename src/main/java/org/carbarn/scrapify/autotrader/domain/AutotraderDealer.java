@@ -33,4 +33,6 @@ public class AutotraderDealer {
 
     private String state;
 
+    private Boolean enableDataScraping;
+
 }

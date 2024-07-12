@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface AutotraderDealerRepository extends JpaRepository<AutotraderDealer, Integer> {
     Optional<AutotraderDealer> findByTradingNameAndPhoneLead(String tradingName, String phoneLead);
+    Optional<AutotraderDealer> findByAutoTraderDealerId( Long autoTraderDealerId);
 }
