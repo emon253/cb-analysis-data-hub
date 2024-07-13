@@ -10,6 +10,7 @@ import org.carbarn.scrapify.consts.ConstData;
 import org.carbarn.scrapify.exceptions.ScrapifyException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -48,12 +49,14 @@ public class AutotraderScraperService {
         this.soldUpdateService = soldUpdateService;
         this.dealerRepository = dealerRepository;
     }
+    @Async
     public void startScraperForDearWiseData() throws InterruptedException {
         List<AutotraderDealer> byEnableDataScraping = dealerRepository.findByEnableDataScraping(Boolean.TRUE);
         startScraperForDearWiseData(byEnableDataScraping.stream()
                 .map(AutotraderDealer::getAutoTraderDealerId)
                 .collect(Collectors.toList()));
     }
+    @Async
     public void startScraperForDearWiseData(List<Long> dealers) throws InterruptedException {
 
         long currentPage = getLastPageFlagValue();

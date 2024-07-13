@@ -76,8 +76,12 @@ public interface AutotraderVehicleRepository extends JpaRepository<AutotraderCar
             "dealer.tradingName, " +
             "dealer.enableDataScraping, " +
             "COUNT(CASE WHEN listing.status = 'SOLD' THEN 1 END) AS soldQty, " +
-            "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId AND dl.status = 'Live' AND (dl.createdAt BETWEEN :startDate AND :endDate) AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS totalListings, " +
-            "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId AND dl.status = 'Live' AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS currentLiveStock) " +
+            "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId " +
+            "AND (:startDate IS NULL OR :endDate IS NULL OR dl.createdAt BETWEEN :startDate AND :endDate) " +
+            "AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS totalListings, " +
+            "CAST((SELECT COUNT(dl.id) FROM AutotraderCarListing dl WHERE dl.dealer.autoTraderDealerId = dealer.autoTraderDealerId " +
+            "AND dl.status = 'Live' " +
+            "AND (:vinPrefix IS NULL OR dl.vin LIKE CONCAT(:vinPrefix, '%'))) AS long) AS currentLiveStock) " +
             "FROM AutotraderCarListing listing " +
             "JOIN listing.dealer dealer " +
             "WHERE (:startDate IS NULL OR :endDate IS NULL OR listing.soldDate BETWEEN :startDate AND :endDate) " +
@@ -90,6 +94,7 @@ public interface AutotraderVehicleRepository extends JpaRepository<AutotraderCar
             @Param("dealerId") Long dealerId,
             @Param("vinPrefix") String vinPrefix,
             Pageable pageable);
+
 
 
 

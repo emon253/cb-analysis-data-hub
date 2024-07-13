@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @RestController
@@ -71,8 +72,7 @@ public class ScrapperController {
 
 
     @GetMapping("/dealer-individual/start")
-    public ResponseEntity<?> startIndividualDealerScraper(@RequestParam(required = false) String dealers) throws InterruptedException {
-
+    public ResponseEntity<?> startIndividualDealerScraper(@RequestParam(required = false) String dealers) {
 
         if (dealers == null || dealers.trim().isEmpty()) {
             return ResponseEntity.badRequest().body("Dealers parameter is required and cannot be empty.");
@@ -84,13 +84,22 @@ public class ScrapperController {
                     .map(Long::parseLong)
                     .collect(Collectors.toList());
 
-            scraperService.startScraperForDearWiseData(dealerIds);
-            soldUpdateService.updateDealerWiseVehicleSoldStatus(dealerIds);
-            return ResponseEntity.ok().body("Scraping completed.");
+            // Run the scraping process asynchronously
+            CompletableFuture.runAsync(() -> {
+                try {
+                    scraperService.startScraperForDearWiseData(dealerIds);
+//                    soldUpdateService.updateDealerWiseVehicleSoldStatus(dealerIds);
+                } catch (Exception e) {
+                    // Log the exception
+                    System.out.println(e);
+                }
+            });
+
+            return ResponseEntity.ok().body("Scraping started.");
         } catch (NumberFormatException e) {
             return ResponseEntity.badRequest().body("Dealers parameter must contain a comma-separated list of numbers.");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during scraping.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during request processing.");
         }
     }
 
