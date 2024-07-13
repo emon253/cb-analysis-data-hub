@@ -20,6 +20,7 @@ public class DealerService {
     }
 
     public AutotraderDealer updateDealer(AutotraderDealer updatedDealer) {
+
         Optional<AutotraderDealer> optionalDealer = dealerRepository.findByAutoTraderDealerId(updatedDealer.getAutoTraderDealerId());
         if (optionalDealer.isPresent()) {
             AutotraderDealer dealer = optionalDealer.get();

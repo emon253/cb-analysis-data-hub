@@ -1,6 +1,8 @@
 package org.carbarn.scrapify.autotrader.controllers;
 
 import com.google.gson.Gson;
+import org.carbarn.scrapify.autotrader.domain.AutotraderDealer;
+import org.carbarn.scrapify.autotrader.repositories.AutotraderDealerRepository;
 import org.carbarn.scrapify.autotrader.services.AutotraderScraperService;
 import org.carbarn.scrapify.autotrader.services.AutotraderPersistenceService;
 import org.carbarn.scrapify.autotrader.services.ScraperStatusService;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -26,13 +29,15 @@ public class ScrapperController {
 
     private final ScraperStatusService statusService;
     private final VehicleSoldUpdateService soldUpdateService;
+    private final AutotraderDealerRepository dealerRepository;
     private Thread scraperThread;
 
     @Autowired
-    public ScrapperController(AutotraderScraperService scraperService, ScraperStatusService statusService, VehicleSoldUpdateService soldUpdateService) {
+    public ScrapperController(AutotraderScraperService scraperService, ScraperStatusService statusService, VehicleSoldUpdateService soldUpdateService, AutotraderDealerRepository dealerRepository) {
         this.scraperService = scraperService;
         this.statusService = statusService;
         this.soldUpdateService = soldUpdateService;
+        this.dealerRepository = dealerRepository;
     }
 
     @GetMapping("/test")
@@ -44,19 +49,21 @@ public class ScrapperController {
 
     @GetMapping("/dealerWise/start")
     public ResponseEntity<String> startDealerWiseScraper() {
-        if (scraperThread == null || !scraperThread.isAlive()) {
-            scraperThread = new Thread(() -> {
-                try {
-                    statusService.switchScraperStatus("RUNNING");
-                    scraperService.startScraperForDearWiseData(ConstData.getDealers());
-                    statusService.switchScraperStatus("STOPPED");
 
+        if (scraperThread == null || !scraperThread.isAlive()) {
+
+            scraperThread = new Thread(() -> {
+                statusService.switchScraperStatus("RUNNING");
+                try {
+                    scraperService.startScraperForDearWiseData();
                 } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+                    throw new RuntimeException(e);
                 }
+                statusService.switchScraperStatus("STOPPED");
+
             });
             scraperThread.start();
-            return ResponseEntity.ok("Scraper started.");
+            return ResponseEntity.ok().body("Scraper started ");
         } else {
             return ResponseEntity.ok("Scraper is already running.");
         }
@@ -64,7 +71,9 @@ public class ScrapperController {
 
 
     @GetMapping("/dealer-individual/start")
-    public ResponseEntity<?> startIndividualDealerScraper(@RequestParam(required = false) String dealers) {
+    public ResponseEntity<?> startIndividualDealerScraper(@RequestParam(required = false) String dealers) throws InterruptedException {
+
+
         if (dealers == null || dealers.trim().isEmpty()) {
             return ResponseEntity.badRequest().body("Dealers parameter is required and cannot be empty.");
         }
@@ -77,11 +86,10 @@ public class ScrapperController {
 
             scraperService.startScraperForDearWiseData(dealerIds);
             soldUpdateService.updateDealerWiseVehicleSoldStatus(dealerIds);
-            return ResponseEntity.ok("Scraping completed.");
+            return ResponseEntity.ok().body("Scraping completed.");
         } catch (NumberFormatException e) {
             return ResponseEntity.badRequest().body("Dealers parameter must contain a comma-separated list of numbers.");
         } catch (Exception e) {
-            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during scraping.");
         }
     }
@@ -147,4 +155,5 @@ public class ScrapperController {
                 .collect(Collectors.toList());
         soldUpdateService.updateDealerWiseVehicleSoldStatus(dealerIds);
     }
+
 }

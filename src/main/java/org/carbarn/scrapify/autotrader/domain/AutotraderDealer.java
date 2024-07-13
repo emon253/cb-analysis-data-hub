@@ -16,6 +16,7 @@ public class AutotraderDealer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private Long autoTraderDealerId;
 
     @OneToMany(mappedBy = "dealer", cascade = CascadeType.ALL)

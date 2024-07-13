@@ -1,8 +1,10 @@
 package org.carbarn.scrapify.autotrader.services;
 
 import lombok.extern.log4j.Log4j2;
+import org.carbarn.scrapify.autotrader.domain.AutotraderDealer;
 import org.carbarn.scrapify.autotrader.domain.Flag;
 import org.carbarn.scrapify.autotrader.dto.response.AutotraderVehicleResponse;
+import org.carbarn.scrapify.autotrader.repositories.AutotraderDealerRepository;
 import org.carbarn.scrapify.autotrader.repositories.FlagRepository;
 import org.carbarn.scrapify.consts.ConstData;
 import org.carbarn.scrapify.exceptions.ScrapifyException;
@@ -13,6 +15,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Log4j2
 @Service
@@ -27,7 +30,7 @@ public class AutotraderScraperService {
     private final FlagRepository flagRepository;
     private final DataProcessor dataProcessor;
     private final VehicleSoldUpdateService soldUpdateService;
-
+    private final AutotraderDealerRepository dealerRepository;
     @Value("${scraping.interval.autotrader}")
     private Long interval;
 
@@ -36,21 +39,22 @@ public class AutotraderScraperService {
                                     AutotraderPersistenceService persistenceService,
                                     FlagRepository flagRepository,
                                     DataProcessor dataProcessor,
-                                    VehicleSoldUpdateService soldUpdateService) {
+                                    VehicleSoldUpdateService soldUpdateService, AutotraderDealerRepository dealerRepository) {
         this.restTemplate = restTemplate;
         this.statusService = statusService;
         this.persistenceService = persistenceService;
         this.flagRepository = flagRepository;
         this.dataProcessor = dataProcessor;
         this.soldUpdateService = soldUpdateService;
+        this.dealerRepository = dealerRepository;
     }
-
+    public void startScraperForDearWiseData() throws InterruptedException {
+        List<AutotraderDealer> byEnableDataScraping = dealerRepository.findByEnableDataScraping(Boolean.TRUE);
+        startScraperForDearWiseData(byEnableDataScraping.stream()
+                .map(AutotraderDealer::getAutoTraderDealerId)
+                .collect(Collectors.toList()));
+    }
     public void startScraperForDearWiseData(List<Long> dealers) throws InterruptedException {
-//        System.out.println(statusService.getScraperStatus("AUTOTRADER_SCRAPPER_STATUS"));
-//        if (!statusService.getScraperStatus("AUTOTRADER_SCRAPPER_STATUS").equals("RUNNING")) {
-//            log.info("Scraper is set to STOPPED. Exiting...");
-//            return;
-//        }
 
         long currentPage = getLastPageFlagValue();
 
@@ -93,7 +97,7 @@ public class AutotraderScraperService {
             }
             currentPage = 1;
         }
-//        soldUpdateService.updateDealerWiseVehicleSoldStatus();
+        soldUpdateService.updateDealerWiseVehicleSoldStatus(dealers);
         updateLastPageFlag(1);
         updateLastDealerFlag(0);
         log.info("Scraping process is complete. All pages for all dealers have been processed.");
