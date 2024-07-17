@@ -44,6 +44,8 @@ public class AutotraderCarListing extends BaseEntity {
     private String model;
     private String variant;
     private String series;
+    private String modelCode;
+    private String chassis;
     private String status;
     private String soldDate;
     private String url;
