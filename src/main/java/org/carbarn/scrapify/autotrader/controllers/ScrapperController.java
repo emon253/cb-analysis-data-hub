@@ -29,16 +29,13 @@ public class ScrapperController {
     private final AutotraderScraperService scraperService;
 
     private final ScraperStatusService statusService;
-    private final VehicleSoldUpdateService soldUpdateService;
-    private final AutotraderDealerRepository dealerRepository;
-    private Thread scraperThread;
+    private final VehicleSoldUpdateService soldUpdateService;private Thread scraperThread;
 
     @Autowired
-    public ScrapperController(AutotraderScraperService scraperService, ScraperStatusService statusService, VehicleSoldUpdateService soldUpdateService, AutotraderDealerRepository dealerRepository) {
+    public ScrapperController(AutotraderScraperService scraperService, ScraperStatusService statusService, VehicleSoldUpdateService soldUpdateService) {
         this.scraperService = scraperService;
         this.statusService = statusService;
         this.soldUpdateService = soldUpdateService;
-        this.dealerRepository = dealerRepository;
     }
 
     @GetMapping("/test")

@@ -31,7 +31,7 @@ public class ExportService {
                     "ID", "AutoTraderID", "AutoTraderDealerID", "Source", "SourceID", "VIN", "StockNo",
                     "ManufactureYear", "ColourBody", "Odometer", "Rego", "RegoExpiry", "Make", "Model",
                     "Variant", "Series", "Status", "SoldDate", "URL", "Lat", "Lon", "CreatedAt",
-                    "UpdatedAt", "DeletedAt", "DealerName", "MinPrice"
+                    "UpdatedAt", "DeletedAt","Created", "Updated", "DealerName", "MinPrice"
             };
             writer.writeNext(header);
 
@@ -69,6 +69,8 @@ public class ExportService {
                         carListing.getCreatedAt(),
                         carListing.getUpdatedAt(),
                         carListing.getDeletedAt(),
+                        String.valueOf(carListing.getCreated()),
+                        String.valueOf(carListing.getUpdated()),
                         dealerName,
                         String.valueOf(minPrice)
                 };

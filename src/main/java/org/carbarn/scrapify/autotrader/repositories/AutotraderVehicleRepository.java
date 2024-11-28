@@ -70,5 +70,4 @@ public interface AutotraderVehicleRepository extends JpaRepository<AutotraderCar
 
 
 
-
 }

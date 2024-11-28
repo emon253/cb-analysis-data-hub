@@ -45,7 +45,9 @@ public class ScheduledScraper {
         this.scraperService = scraperService;
     }
 
-    @Scheduled(cron = "0 0 0,6,12,18 * * ?", zone = "Asia/Dhaka")
+//    @Scheduled(cron = "0 0 0,6,12,18 * * ?", zone = "Asia/Dhaka")
+//    @Scheduled(cron = "0 0 * * *", zone = "Australia/Sydney")
+    @Scheduled(cron = "0 0 0,12 * * ?", zone = "Australia/Sydney")
     public void scrapeDataDealerWise() throws InterruptedException {
         logTheSchedulerExecutionTime("Scraping started...");
         scraperService.startScraperForDearWiseData();
